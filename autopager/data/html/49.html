@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Статистика для World of Tanks - clan top</title>
+<link rel="stylesheet" type="text/css" href="/static/style/default.css" />
+<link rel="stylesheet" type="text/css" href="/static/style/tablesorter.css" />
+<link rel="stylesheet" type="text/css" href="/static/style/lib/chosen.css" />
+
+<link rel="icon" href="/static/images/favicons/16px.png" sizes="16x16" type="image/png"/>
+<link rel="icon" href="/static/images/favicons/32px.png" sizes="32x32" type="image/png"/>
+<link rel="apple-touch-icon" href="/static/images/favicons/57px.png" sizes="57x57"/>
+<link rel="icon" href="/static/images/favicons/128px.png" sizes="128x128" type="image/png"/>
+
+<script type="text/javascript" src="/static/js/application.js?r881"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/lib/jquery.metadata.js"></script>
+<script type="text/javascript" src="/static/js/lib/jquery.tablesorter.min.js"></script>
+
+<script id="ad-provider-MonkeyBroker" src="//d3pkae9owd2lcf.cloudfront.net/mb105.gz.js"></script>
+    
+<script>
+    var ads_prepare = [
+        {id: 'top-bar', type: 'leaderboard'},
+        {id: 'middle-bar', type: 'leaderboardBTF'},
+        {id: 'bottom-bar', type: 'leaderboardBTF2'},
+        {id: 'bottom-row', type: 'fixedFooter'}
+    ];
+</script>
+
+<script>
+	var currentUserName = "";
+</script>
+
+<script src="//cdn.zamimg.com/zaf/1.5.x/zaf.min.js"></script>
+<script src="/static/js/ad_framework/zam-site.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/style/ad_framework/zam.css">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> <!-- for charts -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<meta name="keywords" content="wot,wotlabs,world of tanks,world of warplanes,tanks,planes,warplanes,rating,efficiency,tracker,stats,statistics,eu,na,sea,ru,坦克世界,вот,рейтинг,рейтинг ффективности,калькулятор,WN7" /> 
+<meta name="description" content="NoobMeter is a World of Tanks and World of Warplanes game statistics site that calculates efficiency, performance, WN7 ratings and tracks player WoT stats. It has player and clan graphs and comparison, replay upload and signatures."/>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33601440-1']);
+  _gaq.push(['_setDomainName', 'noobmeter.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></head>
+<body>
+	<script type="text/javascript">
+		var decimalSeparator = ",";
+		var groupingSeparator = " ";
+	</script>
+	
+	<!-- -18000000 offset: 10.03.2016 21:31:22 -->
+<div class="header">
+	<div class="title">
+		<a id="logo" href="/">
+ 			<img src="/static/images/favicons/64px_white_wot.png" alt="logo"/>  
+			<span>NoobMeter.com - <i>Статистика для World of Tanks</i></span>  
+		</a>
+	</div>
+
+	<script type="text/javascript"> 
+		$(function() {
+		    $("#logo")
+	        	.mouseover(function() { 
+		            var im = $(this).find("img")
+	        		var src = im.attr("src").replace("white", "orange");
+		            im.attr("src", src);
+	    	    })
+	        	.mouseout(function() {
+		            var im = $(this).find("img")
+	        		var src = im.attr("src").replace("orange", "white");
+		            im.attr("src", src);
+	        	});
+		});
+	</script>
+
+	<div class="headerRightSide">
+	<div class="loginLogout">
+		<span><a href="http://blog.noobmeter.com/">Блог</a></span>&nbsp;
+	
+		<span>
+				<a class="alertLink" href="/login" title="Зарегистрируйтесь, чтобы Ваш аккаунт обновлялся регулярно">Войти</a>
+			</span> 
+		</div>  
+	<div class="flags">
+		<a href="/switchLocale/en_US" title="English (US)"><img src="/static/images/flags/US.png" alt="EN-US"/></a>
+		<a href="/switchLocale/en_GB" title="English (UK)"><img src="/static/images/flags/GB.png" alt="EN-GB"/></a>
+		<a href="/switchLocale/de" title="Deutsch"><img src="/static/images/flags/DE.png" alt="DE"/></a> 
+		<a href="/switchLocale/pl" title="Polski"><img src="/static/images/flags/PL.png" alt="PL"/></a>
+		<a href="/switchLocale/ru" title="Русский"><img src="/static/images/flags/RU.png" alt="RU"/></a>
+		<a href="/switchLocale/cz" title="Česky"><img src="/static/images/flags/CZ.png" alt="SK"/></a>
+		<a href="/switchLocale/sk" title="Slovensky"><img src="/static/images/flags/SK.png" alt="SK"/></a>
+	</div>
+	</div>
+</div>
+
+<div class="searchForm">
+<form action="/Header.action" method="get"><div>
+    Сервер&nbsp;
+	
+   	<select name="serverId"><option title="European server" value="eu">EU</option><option title="North-American server" value="na">NA</option><option selected="selected" title="Русский сервер (Russian server)" value="ru">РУ</option><option title="South-East Asian server" value="sea">SEA</option><option title="한국어 (Korean server)" value="kr">한국</option><option title="Việt Nam (Vietnamese server)" value="vn">VN</option><option title="联通北方区 (Northern-region Chinese server)" value="cn_ncw">联通北</option><option title="电信南方区 (Southern-region Chinese server)" value="cn_scw">电信南</option></select><input id="stripes-1822597430" name="name" type="text" /><script type="text/javascript">setTimeout(function(){try{var z=document.getElementById('stripes-1822597430');z.focus();z.select();}catch(e){}},1);</script>&nbsp;
+	
+	Искать или сравнить&nbsp;
+	
+	<input name="findPlayer" value="Игрока" type="submit" /><input name="findClan" value="Клан" type="submit" />
+	&nbsp;&nbsp;&nbsp;
+ 	<input name="tankStatsEvent" value="Стата танков" type="submit" />
+	&nbsp;
+	<input name="replaySearch" value="Искать реплеи" type="submit" /></div>
+ 	
+	<table>
+	<tr>	
+	<td>
+ 	Лучшие на сервере:&nbsp;
+ 	</td>
+ 	<td>
+	<input name="serverTopPR" value="РН" type="submit" /><input name="serverTopWnLatest" value="WN7" type="submit" /><input name="serverTopWnLegacy" value="WN8" type="submit" /><input name="serverTopER" value="РЭ" type="submit" /><input name="serverTopWR" value="%П" type="submit" /><input name="serverTopBattles" value="Бои" type="submit" /></td>
+
+	<td>
+ 	&nbsp;Лучшие (последние битвы):&nbsp;
+ 	</td>
+ 	
+ 	<td> 	
+	<input name="serverTopRecentPR" value="РН" type="submit" /><input name="serverTopRecentWnLatest" value="WN7" type="submit" /><input name="serverTopRecentWnLegacy" value="WN8" type="submit" /><input name="serverTopRecentER" value="РЭ" type="submit" /><input name="serverTopRecentWR" value="%П" type="submit" /></td> 	
+	</tr>
+	
+	<tr>
+	<td>
+ 	Лучшие кланы:&nbsp;
+ 	</td>
+ 	<td>
+ 	<input name="clanTopPR" value="РН" type="submit" /><input name="clanTopWnLegacy" value="WN8" type="submit" /><input name="clanTopER" value="РЭ" type="submit" /><input name="clanTopWR" value="%П" type="submit" /><input name="clanTopBattles" value="Бои" type="submit" /></td>
+	<td>
+ 	&nbsp;Лучшие кланы (последние битвы):&nbsp;
+ 	</td>
+ 	<td>
+ 	<input name="clanTopRecentPR" value="РН" type="submit" /><input name="clanTopRecentWnLegacy" value="WN8" type="submit" /><input name="clanTopRecentER" value="РЭ" type="submit" /><input name="clanTopRecentWR" value="%П" type="submit" /><input name="clanTopRecentBattles" value="Бои" type="submit" /></td>
+	</tr>
+	</table>
+	
+<div style="display: none;"><input type="hidden" name="_sourcePage" value="5SXhdFc0pzI19Vi5vHIkS2p7utSSIk_t" /><input type="hidden" name="__fp" value="8FcS9JGYtkEYZcgJAfaTrg==" /></div></form></div>
+
+<div></div>
+
+<div>
+    <div id="top-bar">
+        <script>Ads.create('leaderboard', 'top-bar');</script>
+    </div>
+</div><div class="pageContent">
+		<h1>
+			Топ клана по WN8</h1>
+
+		<div>
+		Вы смотрите топ кланов на сервере RU отсортированных по WN8</div>
+		<br/>
+
+		<table class="tablesorter sortTable">
+			<thead>
+				<tr>
+					<th  class="{sorter: false}">#</th>
+					<th  class="{sorter: 'text'}">Имя</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Рейтинг нагиба (общие)</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Рейтинг нагиба (недавние)</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Рейтинг эфф. (общие)</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Рейтинг эфф. (недавние)</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Рейтинг WN8 (альфа) (общие)</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Рейтинг WN8 (альфа) (недавние)</th> 	 		
+					<th  class="{sorter: 'percent'}">Процент побед (общие)</th>
+					<th  class="{sorter: 'percent'}">Процент побед (недавние)</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Кол. Боёв (общие)</th>
+					<th  class="{sorter: 'ignoreNonDigits'}">Кол. Боёв (недавние)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Рендомные Олени" href="/clan/ru/OLENI/7298">OLENI</a></td>
+
+						<td><b>1 889</b></td>
+						<td><b>2 070</b></td>
+
+ 						<td>1 773</td>
+ 						<td>1 876</td>  
+
+ 						<td>2 773</td>
+ 						<td>3 139</td>  
+
+						<td>62,7%</td>
+						<td>65,0%</td>
+
+						<td>1 396 646</td>
+						<td>25 367</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Танк-о-Мания" href="/clan/ru/T-MAN/104058">T-MAN</a></td>
+
+						<td><b>1 884</b></td>
+						<td><b>2 171</b></td>
+
+ 						<td>1 851</td>
+ 						<td>2 181</td>  
+
+ 						<td>2 733</td>
+ 						<td>3 349</td>  
+
+						<td>64,4%</td>
+						<td>70,1%</td>
+
+						<td>886 409</td>
+						<td>25 808</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="S_O_R" href="/clan/ru/S_O_R/16316">S_O_R</a></td>
+
+						<td><b>1 876</b></td>
+						<td><b>2 118</b></td>
+
+ 						<td>1 807</td>
+ 						<td>2 079</td>  
+
+ 						<td>2 731</td>
+ 						<td>3 205</td>  
+
+						<td>65,1%</td>
+						<td>67,6%</td>
+
+						<td>2 358 562</td>
+						<td>42 171</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Ахаджи слив по центру" href="/clan/ru/AHAGE/42274">AHAGE</a></td>
+
+						<td><b>1 919</b></td>
+						<td><b>2 144</b></td>
+
+ 						<td>1 854</td>
+ 						<td>2 261</td>  
+
+ 						<td>2 709</td>
+ 						<td>3 377</td>  
+
+						<td>63,1%</td>
+						<td>65,7%</td>
+
+						<td>790 231</td>
+						<td>32 907</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Пчёлки" href="/clan/ru/HIVE/3188">HIVE</a></td>
+
+						<td><b>1 819</b></td>
+						<td><b>2 045</b></td>
+
+ 						<td>1 813</td>
+ 						<td>2 081</td>  
+
+ 						<td>2 628</td>
+ 						<td>3 123</td>  
+
+						<td>62,0%</td>
+						<td>65,4%</td>
+
+						<td>2 463 882</td>
+						<td>70 911</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="WHINE DESTROYERS" href="/clan/ru/WHINE/74776">WHINE</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 600</td>
+ 						<td>3 268</td>  
+
+						<td>60,7%</td>
+						<td>64,9%</td>
+
+						<td>1 720 807</td>
+						<td>50 294</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Freeride" href="/clan/ru/FRIDE/27883">FRIDE</a></td>
+
+						<td><b>1 817</b></td>
+						<td><b>2 049</b></td>
+
+ 						<td>1 811</td>
+ 						<td>2 114</td>  
+
+ 						<td>2 597</td>
+ 						<td>3 127</td>  
+
+						<td>60,3%</td>
+						<td>63,6%</td>
+
+						<td>1 815 892</td>
+						<td>44 509</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="SB - Kondor" href="/clan/ru/SB--K/22369">SB--K</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 575</td>
+ 						<td>2 963</td>  
+
+						<td>61,5%</td>
+						<td>64,2%</td>
+
+						<td>1 800 324</td>
+						<td>36 927</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Сraftsmen of War" href="/clan/ru/CWOT/2687">CWOT</a></td>
+
+						<td><b>1 777</b></td>
+						<td><b>2 013</b></td>
+
+ 						<td>1 738</td>
+ 						<td>1 969</td>  
+
+ 						<td>2 498</td>
+ 						<td>2 930</td>  
+
+						<td>60,8%</td>
+						<td>64,9%</td>
+
+						<td>2 285 491</td>
+						<td>55 254</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Justice of N'aix." href="/clan/ru/NAIX/41688">NAIX</a></td>
+
+						<td><b>1 785</b></td>
+						<td><b>1 856</b></td>
+
+ 						<td>1 697</td>
+ 						<td>1 900</td>  
+
+ 						<td>2 471</td>
+ 						<td>2 615</td>  
+
+						<td>62,3%</td>
+						<td>62,2%</td>
+
+						<td>660 678</td>
+						<td>10 046</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="EVIL_GENIUSES" href="/clan/ru/_EVG_/89916">_EVG_</a></td>
+
+						<td><b>1 745</b></td>
+						<td><b>1 895</b></td>
+
+ 						<td>1 750</td>
+ 						<td>1 976</td>  
+
+ 						<td>2 447</td>
+ 						<td>2 766</td>  
+
+						<td>60,3%</td>
+						<td>63,2%</td>
+
+						<td>2 071 902</td>
+						<td>52 344</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Spudi_Mun" href="/clan/ru/SPYDI/93002">SPYDI</a></td>
+
+						<td><b>1 805</b></td>
+						<td><b>2 160</b></td>
+
+ 						<td>1 734</td>
+ 						<td>2 240</td>  
+
+ 						<td>2 436</td>
+ 						<td>3 346</td>  
+
+						<td>59,3%</td>
+						<td>65,0%</td>
+
+						<td>313 963</td>
+						<td>9 599</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Alpha" href="/clan/ru/VIRUS/1791">VIRUS</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 435</td>
+ 						<td>2 871</td>  
+
+						<td>62,2%</td>
+						<td>65,6%</td>
+
+						<td>2 367 578</td>
+						<td>51 650</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Psihi_BY" href="/clan/ru/P_BY/10660">P_BY</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 433</td>
+ 						<td>2 783</td>  
+
+						<td>61,0%</td>
+						<td>64,6%</td>
+
+						<td>2 711 031</td>
+						<td>60 948</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="KUBAN - TREST" href="/clan/ru/TREST/91518">TREST</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 430</td>
+ 						<td>2 710</td>  
+
+						<td>61,8%</td>
+						<td>66,4%</td>
+
+						<td>2 069 077</td>
+						<td>66 633</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="BurnedSky" href="/clan/ru/B-SKY/16550">B-SKY</a></td>
+
+						<td><b>1 773</b></td>
+						<td><b>1 998</b></td>
+
+ 						<td>1 697</td>
+ 						<td>1 937</td>  
+
+ 						<td>2 426</td>
+ 						<td>2 887</td>  
+
+						<td>61,3%</td>
+						<td>64,7%</td>
+
+						<td>2 115 621</td>
+						<td>49 158</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Рендомные Алени" href="/clan/ru/ALENI/19934">ALENI</a></td>
+
+						<td><b>1 790</b></td>
+						<td><b>2 016</b></td>
+
+ 						<td>1 602</td>
+ 						<td>1 773</td>  
+
+ 						<td>2 400</td>
+ 						<td>2 873</td>  
+
+						<td>60,0%</td>
+						<td>63,1%</td>
+
+						<td>1 258 897</td>
+						<td>20 304</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="42nd Tank Division" href="/clan/ru/TD42/62">TD42</a></td>
+
+						<td><b>1 720</b></td>
+						<td><b>1 752</b></td>
+
+ 						<td>1 637</td>
+ 						<td>1 742</td>  
+
+ 						<td>2 396</td>
+ 						<td>2 387</td>  
+
+						<td>62,1%</td>
+						<td>60,4%</td>
+
+						<td>1 123 459</td>
+						<td>10 088</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="No mercy" href="/clan/ru/MERCY/18503">MERCY</a></td>
+
+						<td><b>1 799</b></td>
+						<td><b>2 070</b></td>
+
+ 						<td>1 675</td>
+ 						<td>2 000</td>  
+
+ 						<td>2 393</td>
+ 						<td>3 111</td>  
+
+						<td>59,5%</td>
+						<td>63,8%</td>
+
+						<td>1 298 528</td>
+						<td>38 949</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Kоса Cмерти" href="/clan/ru/KOCA/11110">KOCA</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 379</td>
+ 						<td>2 645</td>  
+
+						<td>59,9%</td>
+						<td>63,0%</td>
+
+						<td>1 605 310</td>
+						<td>40 506</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="ABLE HANDS - УМЕЛЫЕ РУКИ" href="/clan/ru/ABLE/36603">ABLE</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 376</td>
+ 						<td>2 776</td>  
+
+						<td>60,8%</td>
+						<td>65,4%</td>
+
+						<td>2 447 297</td>
+						<td>59 283</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Caimans" href="/clan/ru/CAIM/6235">CAIM</a></td>
+
+						<td><b>1 722</b></td>
+						<td><b>1 890</b></td>
+
+ 						<td>1 706</td>
+ 						<td>1 914</td>  
+
+ 						<td>2 371</td>
+ 						<td>2 659</td>  
+
+						<td>60,3%</td>
+						<td>64,1%</td>
+
+						<td>2 650 785</td>
+						<td>68 539</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="СMЕРШ" href="/clan/ru/CM-3/97451">CM-3</a></td>
+
+						<td><b>1 742</b></td>
+						<td><b>1 943</b></td>
+
+ 						<td>1 670</td>
+ 						<td>1 869</td>  
+
+ 						<td>2 366</td>
+ 						<td>2 710</td>  
+
+						<td>59,7%</td>
+						<td>65,3%</td>
+
+						<td>738 124</td>
+						<td>25 123</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Суровые Пчёлки" href="/clan/ru/LAIR/23381">LAIR</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 336</td>
+ 						<td>2 829</td>  
+
+						<td>58,9%</td>
+						<td>62,8%</td>
+
+						<td>2 044 637</td>
+						<td>48 083</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Рендомные Олёши" href="/clan/ru/OLEWI/34593">OLEWI</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 333</td>
+ 						<td>2 688</td>  
+
+						<td>58,5%</td>
+						<td>61,8%</td>
+
+						<td>1 811 248</td>
+						<td>37 373</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="eXtreme" href="/clan/ru/XTRM/25631">XTRM</a></td>
+
+						<td><b>1 708</b></td>
+						<td><b>1 851</b></td>
+
+ 						<td>1 652</td>
+ 						<td>1 868</td>  
+
+ 						<td>2 331</td>
+ 						<td>2 590</td>  
+
+						<td>60,7%</td>
+						<td>61,8%</td>
+
+						<td>2 257 868</td>
+						<td>43 930</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="FreeRISE" href="/clan/ru/FRISE/50644">FRISE</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 322</td>
+ 						<td>2 869</td>  
+
+						<td>58,6%</td>
+						<td>63,4%</td>
+
+						<td>1 767 286</td>
+						<td>48 328</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="F2 - В атаку!" href="/clan/ru/F2/94347">F2</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 319</td>
+ 						<td>2 723</td>  
+
+						<td>58,6%</td>
+						<td>62,3%</td>
+
+						<td>791 887</td>
+						<td>28 337</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="The End_" href="/clan/ru/KAHEC/82037">KAHEC</a></td>
+
+						<td><b>�</b></td>
+						<td><b>1 864</b></td>
+
+ 						<td>�</td>
+ 						<td>1 856</td>  
+
+ 						<td>2 307</td>
+ 						<td>2 671</td>  
+
+						<td>61,7%</td>
+						<td>65,9%</td>
+
+						<td>2 292 573</td>
+						<td>52 503</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Непробиваемое стадо" href="/clan/ru/CTAD0/30448">CTAD0</a></td>
+
+						<td><b>1 722</b></td>
+						<td><b>1 918</b></td>
+
+ 						<td>1 622</td>
+ 						<td>�</td>  
+
+ 						<td>2 306</td>
+ 						<td>2 733</td>  
+
+						<td>58,4%</td>
+						<td>62,5%</td>
+
+						<td>1 985 372</td>
+						<td>49 292</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title=".:Рандомные Крабы:." href="/clan/ru/CRAB_/40599">CRAB_</a></td>
+
+						<td><b>1 716</b></td>
+						<td><b>1 922</b></td>
+
+ 						<td>1 647</td>
+ 						<td>1 886</td>  
+
+ 						<td>2 302</td>
+ 						<td>2 734</td>  
+
+						<td>58,2%</td>
+						<td>62,4%</td>
+
+						<td>1 552 948</td>
+						<td>40 877</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Kitty Squad &quot;Пушистый взвод&quot;" href="/clan/ru/KITTY/27499">KITTY</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 300</td>
+ 						<td>2 873</td>  
+
+						<td>58,4%</td>
+						<td>60,7%</td>
+
+						<td>856 941</td>
+						<td>13 255</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Aces" href="/clan/ru/ACES/4835">ACES</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 299</td>
+ 						<td>2 470</td>  
+
+						<td>61,5%</td>
+						<td>64,3%</td>
+
+						<td>2 200 425</td>
+						<td>55 457</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Сraftsmen of War (Спецназ)" href="/clan/ru/CWOT3/9338">CWOT3</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 298</td>
+ 						<td>2 628</td>  
+
+						<td>59,3%</td>
+						<td>62,2%</td>
+
+						<td>1 967 514</td>
+						<td>51 888</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Амиго" href="/clan/ru/AMIG0/20744">AMIG0</a></td>
+
+						<td><b>1 703</b></td>
+						<td><b>1 940</b></td>
+
+ 						<td>1 674</td>
+ 						<td>1 953</td>  
+
+ 						<td>2 293</td>
+ 						<td>2 749</td>  
+
+						<td>60,2%</td>
+						<td>64,4%</td>
+
+						<td>1 467 575</td>
+						<td>30 251</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="The RED: Arm" href="/clan/ru/RED-A/2862">RED-A</a></td>
+
+						<td><b>1 702</b></td>
+						<td><b>1 912</b></td>
+
+ 						<td>1 608</td>
+ 						<td>1 852</td>  
+
+ 						<td>2 288</td>
+ 						<td>2 659</td>  
+
+						<td>59,0%</td>
+						<td>63,8%</td>
+
+						<td>2 044 006</td>
+						<td>47 198</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="CAMORRA" href="/clan/ru/-CAM-/34005">-CAM-</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 279</td>
+ 						<td>2 586</td>  
+
+						<td>59,1%</td>
+						<td>62,8%</td>
+
+						<td>1 186 732</td>
+						<td>24 989</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="The Chess" href="/clan/ru/CHESS/21406">CHESS</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 270</td>
+ 						<td>2 746</td>  
+
+						<td>59,9%</td>
+						<td>62,7%</td>
+
+						<td>1 809 620</td>
+						<td>41 593</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Clan for FUN !!" href="/clan/ru/_FUN/96101">_FUN</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 237</td>
+ 						<td>2 575</td>  
+
+						<td>57,7%</td>
+						<td>60,7%</td>
+
+						<td>1 259 096</td>
+						<td>43 662</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Сообщество умников и умниц" href="/clan/ru/YMHUK/58116">YMHUK</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 233</td>
+ 						<td>2 695</td>  
+
+						<td>57,1%</td>
+						<td>60,3%</td>
+
+						<td>1 072 945</td>
+						<td>22 230</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Golden Liger" href="/clan/ru/LIGER/12181">LIGER</a></td>
+
+						<td><b>�</b></td>
+						<td><b>1 846</b></td>
+
+ 						<td>�</td>
+ 						<td>1 797</td>  
+
+ 						<td>2 230</td>
+ 						<td>2 551</td>  
+
+						<td>59,5%</td>
+						<td>61,5%</td>
+
+						<td>1 329 055</td>
+						<td>27 513</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Officers Only" href="/clan/ru/0_0/8621">0_0</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 226</td>
+ 						<td>2 424</td>  
+
+						<td>60,3%</td>
+						<td>61,7%</td>
+
+						<td>1 160 598</td>
+						<td>19 691</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="NomaD" href="/clan/ru/NOMAD/7212">NOMAD</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 220</td>
+ 						<td>2 588</td>  
+
+						<td>58,5%</td>
+						<td>61,6%</td>
+
+						<td>1 987 408</td>
+						<td>47 115</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="KOHEC" href="/clan/ru/KOHEC/32319">KOHEC</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 216</td>
+ 						<td>2 326</td>  
+
+						<td>61,1%</td>
+						<td>65,3%</td>
+
+						<td>2 892 360</td>
+						<td>72 358</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Первая компания" href="/clan/ru/_1/74993">_1</a></td>
+
+						<td><b>1 697</b></td>
+						<td><b>1 874</b></td>
+
+ 						<td>1 594</td>
+ 						<td>1 787</td>  
+
+ 						<td>2 205</td>
+ 						<td>2 512</td>  
+
+						<td>59,8%</td>
+						<td>63,3%</td>
+
+						<td>1 876 083</td>
+						<td>44 878</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Sibirian Coyotes" href="/clan/ru/CYS/49601">CYS</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 194</td>
+ 						<td>2 421</td>  
+
+						<td>58,7%</td>
+						<td>62,1%</td>
+
+						<td>2 388 152</td>
+						<td>59 256</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="F0RZE ™" href="/clan/ru/F0RZE/51657">F0RZE</a></td>
+
+						<td><b>1 649</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 188</td>
+ 						<td>2 249</td>  
+
+						<td>58,6%</td>
+						<td>60,4%</td>
+
+						<td>1 256 571</td>
+						<td>27 026</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="_S_M_E_R_S_H_" href="/clan/ru/_SM__/56982">_SM__</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 188</td>
+ 						<td>2 557</td>  
+
+						<td>59,6%</td>
+						<td>62,7%</td>
+
+						<td>1 973 750</td>
+						<td>56 410</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Играем-отдыхаем" href="/clan/ru/AKORD/96251">AKORD</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 170</td>
+ 						<td>2 422</td>  
+
+						<td>59,6%</td>
+						<td>62,6%</td>
+
+						<td>2 177 018</td>
+						<td>59 369</td>
+					</tr>
+				<tr>
+						<td></td>
+						<td>
+						<a title="Лангусты" href="/clan/ru/DHO-/103556">DHO-</a></td>
+
+						<td><b>�</b></td>
+						<td><b>�</b></td>
+
+ 						<td>�</td>
+ 						<td>�</td>  
+
+ 						<td>2 162</td>
+ 						<td>2 514</td>  
+
+						<td>59,6%</td>
+						<td>63,6%</td>
+
+						<td>776 755</td>
+						<td>24 004</td>
+					</tr>
+				</tbody>
+		</table>
+		<div>
+    <div id="middle-bar">
+        <script>Ads.create('leaderboardBTF', 'middle-bar');</script>
+    </div>
+</div><div id="disqus_thread"></div>
+    <script type="text/javascript">        
+        var disqus_shortname = 'noobmeter'; 
+        var disqus_identifier = 'clanTop/ru/WN8'; 
+		var disqus_title = 'Clan top for RU by WN8'; 
+		var disqus_url = 'http://www.noobmeter.com/clanTop/ru/WN8/'; 
+		
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<div class="disclaimerText"><div>Рапорты содержат только данные из базы NoobMeter. Что-бы добавить игрока, нужно его найти используя функцию поиска.</div><div>Данные обновляются с небольшой задержкой.</div></div>
+		<br/>
+	</div>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		setUpTableSorter();
+	});
+</script>
+
+
+	<!-- AddThis Button BEGIN -->
+	<script type="text/javascript">
+		var addthis_config = {
+			data_ga_property : 'UA-123456-1'
+		};
+	</script>
+
+<div style="padding: 10px 0px 10px 0px;">
+
+
+
+<div class="addthis_toolbox addthis_default_style ">
+
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50e9736d7138d357"></script>
+</div>
+<div style="text-align: center;">
+		<a style="color: blue;" href="http://www.zam.com/advertising.html">Advertise on NoobMeter!</a>	
+	</div>
+
+	<div style="font-size: 0.7em; color: #AAA; text-align: center; padding-bottom: 0.5em;" >
+		All information and services on this site are provided without express or implied warranty of any kind. This site uses cookies. World of Tanks and World of Warplanes are trademarks of Wargaming.net.<br/>
+		<a style="color: #AAA;" href="/privacyPolicy.jsp">Privacy policy</a>
+	</div>
+
+	<!--  Quantcast Tag -->
+<script>
+    qcdata = {} || qcdata;
+    (function(){
+        var elem = document.createElement('script');
+        elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://pixel") + ".quantserve.com/aquant.js?a=p-80xBzMhbKolFI";
+        elem.async = true;
+        elem.type = "text/javascript";
+        var scpt = document.getElementsByTagName('script')[0];
+        scpt.parentNode.insertBefore(elem,scpt);
+    }());
+
+
+    var qcdata = {qacct: 'p-80xBzMhbKolFI',
+        labels: ''
+    };
+</script>
+<noscript>
+    <img src="//pixel.quantserve.com/pixel/p-80xBzMhbKolFI.gif?labels=_fp.event.Default" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast Tag --><script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "6036197" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=6036197&cv=2.0&cj=1" />
+</noscript>
+<div id="bottom-row">
+    	<script>Ads.create('fixedFooter', 'bottom-row');</script>
+	</div>
+	<script>Ads.layoutComplete();</script>
+	</body>
+</html>

@@ -11,3 +11,4 @@ htmlcov
 .joblib
 .cache
 docs/_build
+.~*

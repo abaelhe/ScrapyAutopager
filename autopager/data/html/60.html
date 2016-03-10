@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+    <head>
+        <!-- fweb3 -->
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=EDGE" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQHU19aCBABVVhWAwgGVA=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(){}function r(t){function e(t){return t&&t instanceof n?t:t?a(t,i,o):o()}function u(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,f=0;s>f;f++)a[f].apply(i,r);var u=c[v[n]];return u&&u.push([w,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return f[t]=f[t]||r(u)}function h(t,e){s(t,function(t,n){e=e||"feature",v[n]=e,e in c||(c[e]=[])})}var m={},v={},w={on:d,emit:u,get:p,listeners:l,context:e,buffer:h};return w}function o(){return new n}var i="nr@context",a=t("gos"),s=t(1),c={},f={},u=e.exports=r();u.backlog=c},{1:24,gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,a){try{f?f-=1:r("err",[a||new UncaughtException(t,e,n)])}catch(c){try{r("ierr",[c,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof s?s.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=t("loader"),s=window.onerror,c=!1,f=0;a.features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(1),t(2),"addEventListener"in window&&t(3),a.xhrWrappable&&t(4),c=!0)}i.on("fn-start",function(){c&&(f+=1)}),i.on("fn-err",function(t,e,r){c&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){c&&!this.thrown&&f>0&&(f-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=NREUM.o.EV;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.clearResourceTimings?window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1):window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){for(var e=t;e&&!e.hasOwnProperty("addEventListener");)e=Object.getPrototypeOf(e);e&&r(e)}function r(t){a.inPlace(t,["addEventListener","removeEventListener"],"-",o)}function o(t){return t[1]}var i=t("ee").get("events"),a=t(1)(i),s=t("gos");e.exports=i,r(window),"getPrototypeOf"in Object?(n(document),n(XMLHttpRequest.prototype)):XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&r(XMLHttpRequest.prototype),i.on("addEventListener-start",function(t){if(t[1]){var e=t[1];if("function"==typeof e){var n=s(e,"nr@wrapped",function(){return a(e,"fn-",null,e.name||"anonymous")});this.wrapped=t[1]=n}else"function"==typeof e.handleEvent&&a.inPlace(e,["handleEvent"],"fn-")}}),i.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=t("ee").get("history"),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],9:[function(t,e){var n=t("ee").get("raf"),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=i(t[0],"fn-",this,n)}var o=t("ee").get("timer"),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e){e=e||this;var n=i.context(e);e.readyState>3&&!n.resolved&&(n.resolved=!0,i.emit("xhr-resolved",[],e));try{c.inPlace(e,l,"fn-",r)}catch(o){}}function r(t,e){return e}function o(t,e){for(var n in t)e[n]=t[n];return e}var i=t("ee").get("xhr"),a=t(1),s=t(2),c=s(i),f=s(a),u=NREUM.o,d=u.XHR,l=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout","onreadystatechange"];e.exports=i,window.XMLHttpRequest=function(t){var e=new d(t);try{i.emit("new-xhr",[e],e),e.hasOwnProperty("addEventListener")&&f.inPlace(e,["addEventListener","removeEventListener"],"-",r),e.addEventListener("readystatechange",n,!1)}catch(o){try{i.emit("internal-error",[o])}catch(a){}}return e},o(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:7,2:26,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;u>o;o++)t.removeEventListener(f[o],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=n(t,this.lastSize);if(i&&(r.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,c.emit("xhr-done",[t],t),a("xhr",[e,r,this.startTime])}}}function n(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var o="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return r(o)}function r(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var i=t("loader");if(i.xhrWrappable){var a=t("handle"),s=t(2),c=t("ee"),f=["load","error","abort","timeout"],u=f.length,d=t(1),l=t(3),p=window.XMLHttpRequest;i.features.xhr=!0,t(5),t(4),c.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=e,n.ended=!1,n.xhrGuids={},n.lastSize=null,l&&(l>34||10>l)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),c.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),c.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),c.on("send-xhr-start",function(t,e){var n=this.metrics,o=t[0],i=this;if(n&&o){var a=r(o);a&&(n.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{c.emit("internal-error",[n])}catch(r){}}};for(var s=0;u>s;s++)e.addEventListener(f[s],this.listener,!1)}),c.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),c.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),c.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),c.on("addEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-added",[t[1],t[2]],e)}),c.on("removeEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-removed",[t[1],t[2]],e)}),c.on("fn-start",function(t,e,n){e instanceof p&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),c.on("fn-end",function(t,e){this.xhrCbStart&&c.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:15,4:11,5:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],14:[function(t,e){function n(t,e){return function(){r(t,[(new Date).getTime()].concat(i(arguments)),null,e)}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],s=["addPageAction"],c="api-";o(a,function(t,e){newrelic[e]=n(c+e,"api")}),o(s,function(t,e){newrelic[e]=n(c+e)}),e.exports=newrelic,newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),r("err",[t,(new Date).getTime()])}},{1:24,2:25,handle:"D5DuLP"}],15:[function(t,e){var n=0,r=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);r&&(n=+r[1]),e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n,o){r.buffer([t],o),r.emit(t,e,n)}var r=t("ee").get("handle");e.exports=n,n.ee=r},{ee:"QJf3ax"}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){if(!h++){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){t[e]||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()],null,"api");var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()],null,"api")}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;NREUM.o={ST:setTimeout,XHR:c.XMLHttpRequest,REQ:c.Request,EV:c.Event,PR:c.Promise,MO:c.MutationObserver},t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-885.min.js"},l=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),p=e.exports={offset:i(),origin:u,features:{},xhrWrappable:l};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()],null,"api");var h=0},{1:24,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,c;try{i=this,n=o(arguments),s="function"==typeof r?r(n,i):r||{}}catch(u){d([u,"",[n,i,a],s])}f(e+"start",[n,i,a],s);try{return c=t.apply(i,n)}catch(l){throw f(e+"err",[n,i,l],s),l}finally{f(e+"end",[n,i,c],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,u(t,nrWrapper),nrWrapper)}function c(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=c,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+
+        <title>0 &gt; Forum &gt; 0 bei notebooksbilliger.de </title>
+        <base href="http://www.notebooksbilliger.de/" />
+        <meta name="title" content="0 &gt; Forum &gt; 0 bei notebooksbilliger.de "/>
+        <meta name="description" content="0 &gt; Forum &gt; 0 bei notebooksbilliger.de "/>
+        <meta name="keywords" content=""/>
+        <meta name="robots" content="index, follow, noodp"/>
+        <meta name="language" content="deutsch"/>
+        <meta name="author" content="notebooksbilliger.de AG"/>
+        <link rel="author" href="https://plus.google.com/107076845224716861737/"/>
+        <meta property="og:title" content="0 &gt; Forum &gt; 0 bei notebooksbilliger.de "/>
+
+        <meta property="og:url" content="http://www.notebooksbilliger.de/forum/Aktuelle+Themen//nbb/8025a0" />
+        <meta property="og:description" content="0 &gt; Forum &gt; 0 bei notebooksbilliger.de " />
+        <meta property="og:type" content='article'/>
+        <meta property="og:site_name" content="notebooksbilliger.de" />
+        
+        <meta property="fb:admins" content="1314522503,100000878132536,685225830"/>
+        <meta property="fb:page_id" content="96029103777"/>
+                <meta name="age-de-meta-label" content="age=0 info=www.notebooksbilliger.de/age-de.xml v=1.0 kind=sl area=*.notebooksbilliger.de/* protocol=all age-issuer=www.notebooksbilliger.de" />
+        <link rel="stylesheet" type="text/css" href="http://www.notebooksbilliger.de/includes/base_201603101650.css"/>
+        <link rel="stylesheet" type="text/css" href="http://www.notebooksbilliger.de/includes/main_201603101650.css"/>
+        <link rel="stylesheet" type="text/css" href="http://www.notebooksbilliger.de/includes/epoq_201603101650.css"/>
+
+        <!--[if gt IE 7]>
+        <link rel="stylesheet" type="text/css" href="http://www.notebooksbilliger.de/includes/css/ie_20140331.css" />
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" media="only screen and (device-width: 768px)" href="http://www.notebooksbilliger.de/includes/ipad_20150226.css" />
+        <script type="text/javascript" language="javascript">
+
+            var epoq_displayDocsInSuggest = true;
+        </script>
+        <script type="text/javascript" charset="utf-8"  language="javascript" src="http://www.notebooksbilliger.de/includes/javascript/epoq_201601191111.js"></script>
+        <script type="text/javascript" language="javascript" src="http://www.notebooksbilliger.de/includes/javascript/main_20160229.js?tracker=null"></script>
+        <script type="text/javascript" language="javascript">
+            var eqJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+            document.write(unescape("%3Cscript src='" + eqJsHost + "rs.epoq.de/web-api/epoq.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript" language="javascript" src="http://www.notebooksbilliger.de/extensions/api/naMediaAd.php"></script>
+        <script type="text/javascript" language="javascript" src="http://www.notebooksbilliger.de/includes/javascript/getpid.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://www.notebooksbilliger.de/includes/forum_20151210.css" />
+      
+        
+        <link rel="canonical" href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/" />
+        <link rel="alternate" media="only screen and (max-width: 640px)"
+              href="http://m.notebooksbilliger.de/forum/Aktuelle+Themen/" >
+        
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="http://www.notebooksbilliger.de/includes/javascript/plugins3rd/epoq/excanvas.min.js"></script>
+    <![endif]-->
+        <link rel="publisher" href="https://plus.google.com/107076845224716861737" />
+        <link rel="SHORTCUT ICON" href="http://www.notebooksbilliger.de/gfx/favicon.ico" />
+        <link rel="search" type="application/opensearchdescription+xml" title="notebooksbilliger.de - Suche" href="http://www.notebooksbilliger.de/includes/nbb_search_v4.xml" />
+        <link rel="image" href="http://www.notebooksbilliger.de/gfx/nbb_facebook_image.gif" />
+        <link rel="image_src" href="http://www.notebooksbilliger.de/gfx/nbb_facebook_image.gif" />
+        <meta property="og:image" content="http://www.notebooksbilliger.de/gfx/nbb_facebook_image.gif"/>
+        <script type='text/javascript'>
+            var params = 'special=Aktuelle%2520Themen%252F&page=Seite%252F3&';
+            var hash   = window.location.hash;
+                hash   = hash.replace("#","");
+
+            var pairs  = new Object();
+
+            if (params != undefined) {
+                query  = params.split('&');
+                for (var i = 0; i < query.length; i++) {
+                    var varName = query[i].split('=');
+
+                    pairs[varName[0]] = varName[1];
+                }
+            }
+
+            // if old referrer campaign id tracking -> rewrite this into a new nbb and shortening to 6 chars
+            if (typeof(pairs.refcampaign_id) != 'undefined') {
+                pairs.nbb = pairs.refcampaign_id.slice(0,5);
+
+                // remove old refcampaign_id
+                delete pairs.refcampaign_id;
+
+                // rewrite params too
+                var prepareParams = new Array();
+
+                // change "url"
+                jQuery.each(pairs, function(index, value) {
+                    prepareParams.push(index + '=' + value);
+                });
+
+                params = prepareParams.join('&');
+            }
+
+            // set url params
+            var data   = "urlParams=" + encodeURIComponent(params);
+
+            if ((typeof(pairs.nbb) != 'undefined' && typeof(pairs.ref) != 'undefined')
+                || (typeof(pairs.nbb) != 'undefined' && typeof(pairs.zanpid) != 'undefined')
+                || hash != 0
+            ) {
+                if (hash.length > 0) {
+                    data += '&hash=' + hash;
+                }
+
+                jQuery.ajax({
+                    type: "GET",
+                    url: "/extensions/api/affiliateTracking.php",
+                    data: data
+                });
+            }
+        </script>
+        <script type='text/javascript'>
+
+            // Customer recently viewed products part.
+            if (typeof(Storage) !== 'undefined' 
+                && typeof(jQuery.jStorage) !== 'undefined' 
+                && jQuery.jStorage.storageAvailable() === true
+            ) {
+                // Browser support Webstorage
+                // deactivate webstorage cause of cross domain access violation
+                var UseRecentlyViewedStorage = false;
+                var UseRecentlyViewedCookie = true;
+
+            } else {
+                // Browser do not support webstorage.
+                var UseRecentlyViewedStorage = false;
+                var UseRecentlyViewedCookie = true;
+            }
+            // set flag for adblockChecking
+            var adblockJsFile = false;
+        </script>
+        <script type="text/javascript" src="includes/javascript/advertisement.js"></script>
+    </head>
+    <!--[if IE 7]>         <body class="isDesktop ie7 lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <body class="isDesktop ie8 lt-ie10 lt-ie9"> <![endif]-->
+    <!--[if IE 9]>         <body class="isDesktop ie9 lt-ie10"> <![endif]-->
+    <!--[if gt IE 9]><!--> <body class="isDesktop"> <!--<![endif]-->
+<script type="text/javascript">
+                //<![CDATA[
+                var webtrekkConfig = {"trackId":"999661753100028","trackDomain":"now.notebooksbilliger.de","domain":"www.notebooksbilliger.de;www.sofort.com;secure.ogone.com;www.paypal.com;mobile.paypal.com;masterpass.com;img.notebooksbilliger.de;m.notebooksbilliger.de","executePluginFunction":"wt_cdb","cookie":"1","mediaCode":"refcampaign_id;ref_id;nbb;nbb_id;nbb_az;nbb_kw","contentId":"","globalVisitorIds":"true"};
+                //]]>
+            </script><script type="text/javascript" src="/includes/javascript/webtrekk_20160219.js"></script><script type="text/javascript">
+                        //<![CDATA[
+                        var webtrekk   = {"contentId":"de.Infocenter.Aktuelle Themen","linkTrack":"link","heatmap":"","form":"","contentGroup":{"1":"de","2":"Infocenter"},"customEcommerceParameter":{"17":"0,00"},"customSessionParameter":{"2":"unknown","3":"a","4":"c"}}
+                        var ntHash     = window.location.hash.replace("#","");
+                        var regExpress = /^Q\d+(?:C|S)/;
+                        var wt_cdbData = wt_cdbData || [];
+
+                        if (ntHash.length != 0 && regExpress.test(ntHash) == true) {
+                            var clientID        = ntHash.slice(ntHash.indexOf("C"), ntHash.length);
+                            webtrekk.campaignId = encodeURIComponent('nbb=.' + ntHash);
+                        }
+
+                        var wt       = new webtrekkV3(webtrekk);
+wt.urmCategory = {1 : 'Gast'};
+wt.emailOptout = '2';
+wt.sendinfo();
+wt.customClickParameter = {1 : 'de.Infocenter.Aktuelle Themen', 9 : 'Infocenter'};
+
+                        //]]>
+                      </script><script type="text/javascript">
+                    //<![CDATA[
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                        ga('create', 'UA-2429593-1', 'auto');
+                 ga('require', 'displayfeatures');
+                 ga('send', 'pageview');
+                                //]]>
+                 </script>
+                 <!-- Google Code for Remarketing Tag -->
+                      <script type="text/javascript">
+                            var google_tag_params = {
+                            ecomm_prodid: "",
+                            ecomm_pagetype: "Infocenter",
+                            ecomm_totalvalue: ""
+                            };
+                        </script>
+                       <script type="text/javascript">
+                        /* <![CDATA[ */
+                            var google_conversion_id     = 970023449;
+                            var google_conversion_format = "3";
+                            var google_custom_params     = window.google_tag_params;
+                            var google_remarketing_only  = true;
+                        /* ]]> */
+                        </script>
+                     <script class="google_image" type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+                         <noscript>
+                            <img class="google_image" alt=""
+                                 src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/970023449/?value=""&amp;guid=ON&amp;script=0"/>
+                        </noscript>
+                            <script type="text/javascript">
+            //<![CDATA[
+    epoq_nbbRequestAppendix = "";
+    epoq_search_sessionId = "67c7f5f96da7f06350dc2a301ea29155";
+            //]>
+        </script>
+  <!-- w1 -->
+  <div class="main" id="page-main">
+    <!-- Header -->
+   
+<div class="header_line cf">
+    <div class="nbb-pageheader">        <a href="/" class="nbb_header_logo" data-wt="notebooksbilliger.de">
+            <img src="gfx/header/nbb_header_logo_2014.png"
+                 width="382" height="32"
+                 class="header_logo_nbb"
+                 alt="notebooksbilliger.de"/>
+        </a>
+        <div class="topBar">
+        <div class="head-account">
+            <a data-wt="Anmelden" class="nbx-text-btn-base"  id="loginButton" href="https://www.notebooksbilliger.de/kundenkonto/anmelden/action/process">
+                <i class="nbx-icon-header-user pre">&nbsp;</i>Anmelden
+            </a>
+        </div>
+        <script type="text/javascript">
+            jQuery('#loginButton').mouseover(function() {
+                if (document.URL.indexOf("#!/q") >= 0) {
+                    var params = document.URL.slice(document.URL.indexOf("#!/q"));
+                    var url    = "https://www.notebooksbilliger.de/kundenkonto/anmelden/action/process";
+                    jQuery('#loginButton').attr('href', url + params);
+                }
+            });
+        </script>
+        <div class="head-notepad" id="notepad">
+
+            <a data-wt="Merkzettel" class="nbx-text-btn-base notepad"
+               href="https://www.notebooksbilliger.de/merkzettel">
+                <i class="nbx-icon-header-notepad pre">&nbsp;</i>Merkzettel
+                <span id="notepad-number">
+                                </span>
+            </a>
+        </div>
+
+        <div class="head-contact">
+            <a data-wt="Kontakt" class="nbx-text-btn-base"
+               href="http://www.notebooksbilliger.de/infocenter/section/contact_us">
+                <i class="nbx-icon-header-contact pre">&nbsp;</i>Kontakt
+            </a>
+        </div>
+
+        </div>
+    </div>
+    <div class="nbbapps">
+        <a class="icon_nbb icon_app-android"
+           href="https://play.google.com/store/apps/details?id=com.nbb.app&amp;hl=de"
+           target="_blank">
+            <span title="Android">&nbsp;</span>
+        </a>
+        <a class="icon_nbb icon_app-iphone"
+           href="https://itunes.apple.com/de/app/notebooksbilliger.de-die-shopping/id481326696"
+           target="_blank">
+            <span title="iPhone">&nbsp;</span>
+        </a>
+    </div>
+</div>
+
+<div style="clear:both; height:0; line-height:0;">&nbsp;</div>
+<div class="header_line cf">
+    <div class="headersearch">
+
+        <!-- Kaufberater -->
+        <div id="searchex_scout" onclick="toggleAdvisorList('#searchex_scout');">
+            <span class="header_box searchex_scout">
+                <span class="nbx-text-btn-base nbx-big-icon header_box_label">
+                    <i class="nbx-icon-header-scout pre">&nbsp;</i>Kaufberater<i class="nbx-icon-arrow-right-blue suf">&nbsp;</i>
+                </span>
+            </span>
+            <div class="scout_list">
+                <div class="item">
+                    <a href="http://www.notebooksbilliger.de/notebook+berater">Notebook-Kaufberatung</a>
+                </div>
+                <div class="item">
+                    <a href="http://www.notebooksbilliger.de/drucker+kaufberatung">Drucker-Kaufberatung</a>
+                </div>
+                <div class="item">
+                    <a href="http://www.notebooksbilliger.de/beamer+beratung">Beamer-Kaufberatung</a>
+                </div>
+                <div class="item">
+                    <a href="http://www.notebooksbilliger.de/tv+kaufberatung">TV-Kaufberatung</a>
+                </div>
+                <div class="item">
+                    <a href="http://www.notebooksbilliger.de/waschmaschine+kaufberatung">Waschmaschinen-Kaufberatung</a>
+                </div>
+                <div class="item">
+                    <a href="http://www.notebooksbilliger.de/geschirrspueler+kaufberatung">Geschirrsp&uuml;ler-Kaufberatung </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- "searchborder" BEGIN -->
+        <div class="searchborder" id="searchhover">
+            <div class="search" id="epoq_typeahead">
+                <div class="searchcontainer" id="searchcontainer">
+                    <form action="" method="get"
+                          accept-charset="utf-8" id="epoq_searchform">
+                        <label class="searchbox_label" title="Suchbegriff eingeben" for="epoq_typeaheadbox"><span>&nbsp;</span></label>
+                        <input type="hidden" name="enc" value="&#153;" />
+                        <input type="text" name="searchbox" id="epoq_typeaheadbox" class="searchfield"
+                               placeholder="Suchbegriff eingeben..."
+                               value=""
+                               maxlength="200"/>
+                        <script type="text/javascript">
+                            document.getElementById('epoq_typeaheadbox').setAttribute("autocomplete", "off");
+                        </script>
+                        <button type="submit" data-wt="{'ck':{'2':'Epoq Suchen-Button','10':'not used'}}" id="epoq_submit" class="header_box c_orange">Suchen</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Button Erweitere Suche -->
+            <div id="searchex">
+                <a href="http://www.notebooksbilliger.de/erweiterte+suche/notebooks+erweiterte+suche" class="header_box searchex">
+                    <span class="nbx-text-btn-base nbx-big-icon header_box_label">
+                        <i class="nbx-icon-header-searchEx pre">&nbsp;</i>Erweiterte Suche
+                    </span>
+                </a>
+            </div>
+
+        </div>
+        <div id="shoppingcart">
+            <a href="https://www.notebooksbilliger.de/warenkorb" class="header_box shoppingcart">
+
+                <span class="nbx-text-btn-base nbx-big-icon header_box_label">
+                    <i class="nbx-icon-header-cart pre">&nbsp;</i>
+
+                    Warenkorb
+                    <i class="nbx-icon-arrow-right suf">&nbsp;</i>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <div class="headsocialicons">
+        <a class="icon_nbb icon_social-m-facebook first" data-wt="facebook" href="http://www.facebook.com/Notebooksbilliger" target="_blank"><span>&nbsp;</span></a>
+        <a class="icon_nbb icon_social-m-blog" data-wt="Blog" href="http://blog.notebooksbilliger.de" target="_blank"><span>&nbsp;</span></a>
+        <a class="icon_nbb icon_social-m-instagram" data-wt="Instagram" href="http://instagram.com/notebooksbilliger" target="_blank"><span>&nbsp;</span></a>
+        <a class="icon_nbb icon_social-m-eyeem" data-wt="youtube" href="https://www.youtube.com/user/notebooksbilliger" target="_blank"><span>&nbsp;</span></a>
+        <a class="icon_nbb icon_social-m-twitter" data-wt="twitter" href="http://twitter.com/#!/nbbilliger" target="_blank"><span>&nbsp;</span></a>
+        <a class="icon_nbb icon_social-m-gplus" data-wt="googleplus" href="https://plus.google.com/107076845224716861737/posts" target="_blank"><span>&nbsp;</span></a>
+        <a class="icon_nbb icon_social-m-tumblr last" data-wt="tumblr" href="http://notebooksbilliger.tumblr.com/" target="_blank"><span>&nbsp;</span></a>
+    </div>
+</div>
+<div style="clear:both; height:0; line-height:0;">&nbsp;</div>
+    <!-- Column Left -->
+    <div id="column_left" class="column_left">
+<div class="page-nav-shop collapsed"><span class="navigation-head"><a href="">Alle Kategorien anzeigen</a></span><ul class="navigation-section-0"><li class="navigation-entry is_passive first last"><a class="navigation-label" href="">« aufklappen</a></li></ul></div><div class="page-nav-service"><span class="navigation-head">Service &amp; Support</span><ul class="navigation-section-0"><li class="navigation-entry is_passive has_children has_passive_children first"><a class="navigation-label" href="/infocenter">Infocenter / Hilfe</a><ul class="navigation-section-1"><li class="navigation-entry is_passive has_children has_passive_children first"><a class="navigation-label" href="/infocenter/section/unternehmen">Unternehmen</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/aboutus">Über uns</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/karriere+center">Jobcenter</a></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/presse">Pressecenter</a><ul class="navigation-section-3"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/presse/section/allnews">Pressemitteilungen</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/presse/section/downloads">Downloads</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/presse/section/press_contacts">Presse-Kontakt</a></li></ul></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/partnerprogramm">Partnerprogramm</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/store">Ladengeschäfte</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/Bestellung">Bestellung</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/navigation">Navigation</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/filterfunktion">Filterfunktion</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/suchfunktion">Suchfunktion</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/mein_konto">Mein Konto</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/warenkorb">Warenkorb</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/kasse">Kasse</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/angebotsanfragen">Angebotsanfragen</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/zahlungsweisen">Zahlungsweisen</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/pay_prepayment">Vorkasse</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/pay_cod">Nachnahme</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/pay_sofortueberweisung">SOFORT Überweisung</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/pay_finanzierung">Finanzierung</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/pay_paypal">PayPal</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/pay_kreditkarte">Kreditkarte</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/leasing">Leasing</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/pay_invoice">Rechnung für Geschäftskunden</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/masterpass">MasterPass</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/lieferung">Lieferung</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/availability">Verfügbarkeit &amp; Lieferzeiten</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/shipping">Versandkosten</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/logistikpartner">Logistikpartner</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/pay_pickup">Ladengeschäfte</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/packstation">Packstation</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/freight_shipping">Lieferinformationen</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/zusatzleistungen">Zusatzleistungen</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/campusprogramm">Campusprogramm</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/kundenkarte">NBB BonusCard</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/kurier">NBB Kurier</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/softwaredownload">Softwaredownloads</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/rund-um-sorglos-paket">Rund-um-Sorglos-Paket</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/garantieverlaengerung">Garantieverlängerung</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/schutzbrief">Schutzbrief</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/mobile">Mobile Site</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/service">Service &amp; Reklamationen</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/transportschaden">Transportschaden</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/falschlieferung">Fehl- oder Falschlieferung</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/warranty">Garantie und Gewährleistung</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/revocation">Widerruf</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/rechtliches">Rechtliches</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/impressum">Impressum</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/conditions">AGB</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/privacy">Datenschutzerklärung</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/recycling">Recycling</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/international">International</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/oesterreich">Kunden aus Österreich</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/foreign">International Customers</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/infocenter/section/Wissenswertes">Wissenswertes</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/infocenter/section/community">Community</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/hardware_drucker">Drucker</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/hardware_display">Display</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/hardware_grafik">Grafik</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/hardware_heimkino">Heimkino</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/hardware_pixelfehlerklassen">Pixelfehlerklassen</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/service_garantiearten">Garantiearten</a></li></ul></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/infocenter/section/contact_us">Kontakt</a></li></ul></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/kundenkonto">Kundenkonto</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/karriere+center">Karrierecenter</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/infocenter/section/store">Ladengeschäfte: Hannover / München / Düsseldorf</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/systemhaus">Öffentliche Auftraggeber</a></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum">Forum</a><ul class="navigation-section-1"><li class="navigation-entry is_passive has_children has_passive_children first"><a class="navigation-label" href="/forum/Allgemeines">Allgemeines</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Allgemeines/Gaming">Gaming</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Allgemeines/Multimedia">Multimedia</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Allgemeines/Bastler">Bastler</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Allgemeines/Plauderecke">Plauderecke</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Allgemeines/Feedback+zum+Forum">Feedback zum Forum</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/andere+Produkte">andere Produkte</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first last"><a class="navigation-label" href="/forum/andere+Produkte/Allgemeines">Allgemeines</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Notebooks">Notebooks</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Notebooks/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/ACER">ACER</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/APPLE">APPLE</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/ASUS">ASUS</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/Dell">Dell</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/FUJITSU">FUJITSU</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/HEWLETT+PACKARD">HEWLETT PACKARD</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/IBMLENOVO">IBM/LENOVO</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/LG">LG</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/MSI">MSI</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/NBB">NBB</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/Packard+Bell">Packard Bell</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/SAMSUNG">SAMSUNG</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/SONY">SONY</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/SCHENKER">SCHENKER</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Notebooks/TOSHIBA">TOSHIBA</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Notebooks/WEITERE">WEITERE</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Tablets">Tablets</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Tablets/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Tablets/Apple">Apple</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Tablets/HTC">HTC</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Tablets/Motorola">Motorola</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Tablets/Samsung">Samsung</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Tablets/Sonstige">Sonstige</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Netbooks">Netbooks</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Netbooks/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/ACER">ACER</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/ASUS">ASUS</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/BELINEA">BELINEA</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/HANNSPREE">HANNSPREE</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/HEWLETT+PACKARD">HEWLETT PACKARD</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/LENOVO">LENOVO</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/LG">LG</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/MEDION">MEDION</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/MSI">MSI</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Netbooks/SAMSUNG">SAMSUNG</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Netbooks/WEITERE">WEITERE</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Zubeh%F6r">Zubehör</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Zubeh%F6r/Apple-Zubeh%F6r">Apple-Zubehör</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Arbeitsspeicher">Arbeitsspeicher</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Cardreader">Cardreader</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Digitale+Bilderrahmen">Digitale Bilderrahmen</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Dockingl%F6sungen">Dockinglösungen</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Ersatz-Zusatz-Akkus">Ersatz-/Zusatz-Akkus</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Gaming-Zubeh%F6r">Gaming-Zubehör</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Garantien">Garantien</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Headsets">Headsets</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Kabel++Adapter">Kabel &amp; Adapter</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/K%FChler+und+Stands">Kühler und Stands</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Laufwerkserweit.">Laufwerkserweit.</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Lautsprecher">Lautsprecher</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/M%E4use">Mäuse</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Notebookschl%F6sser">Notebookschlösser</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Pr%E4sentationsger%E4te">Präsentationsgeräte</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Reinigung+und+Schutz">Reinigung und Schutz</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Rohlinge">Rohlinge</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Scanner">Scanner</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Taschen">Taschen</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Tastaturen++Desktops">Tastaturen / Desktops</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/%DCberspannungsschutz">Überspannungsschutz</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/UMTS-Adapter">UMTS-Adapter</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/USB-Adapter">USB-Adapter</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/USB-SPEICHER">USB-SPEICHER</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/USB-HUBS">USB-HUBS</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Zubeh%F6r/Webcams">Webcams</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Zubeh%F6r/WEITERE">WEITERE</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/PC-Systeme">PC-Systeme</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/PC-Systeme/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/ACER">ACER</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/APPLE">APPLE</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/ASUS">ASUS</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/BELINEA">BELINEA</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/FUJITSU">FUJITSU</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/HEWLETT+PACKARD">HEWLETT PACKARD</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/HM24">HM24</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/HYRICAN">HYRICAN</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/IBMLENOVO">IBM/LENOVO</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/MSI">MSI</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/NBB">NBB</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/Packard+Bell">Packard Bell</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/SONY">SONY</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Systeme/Zubeh%F6r">Zubehör</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/PC-Systeme/WEITERE">WEITERE</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/TFT-Monitore">TFT-Monitore</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/TFT-Monitore/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TFT-Monitore/43+-+48+cm+17+-+19">43 - 48 cm (17&quot; - 19&quot;)</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TFT-Monitore/51+-+54+cm+20+-+21">51 - 54 cm (20&quot; - 21&quot;)</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TFT-Monitore/55+-+58+cm+22+-+23">55 - 58 cm (22&quot; - 23&quot;)</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TFT-Monitore/60+-+62+cm+24+-+25">60 - 62 cm (24&quot; - 25&quot;)</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/TFT-Monitore/65+-+76+cm+26+-+30">65 - 76 cm (26&quot; - 30&quot;)</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/TV++Zubeh%F6r">TV &amp; Zubehör</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/TV++Zubeh%F6r/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TV++Zubeh%F6r/LCD-TVs">LCD-TVs</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TV++Zubeh%F6r/Plasma-TVs">Plasma-TVs</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TV++Zubeh%F6r/Blu-ray+Player++Recorder">Blu-ray Player &amp; Recorder</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/TV++Zubeh%F6r/DVD-Player++Recorder">DVD-Player &amp; Recorder</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/TV++Zubeh%F6r/TV-Receiver">TV-Receiver</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Beamer">Beamer</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Beamer/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/ACER">ACER</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/BENQ">BENQ</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/EPSON">EPSON</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/INFOCUS">INFOCUS</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/LG">LG</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/MITSUBISHI">MITSUBISHI</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/NEC">NEC</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/OPTOMA">OPTOMA</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/PANASONIC">PANASONIC</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/SAMSUNG">SAMSUNG</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Beamer/SANYO">SANYO</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Beamer/SONY">SONY</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Handys">Handys</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Handys/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Handys/HTC">HTC</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Handys/LG">LG</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Handys/MOBISTEL">MOBISTEL</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Handys/NOKIA">NOKIA</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Handys/SAMSUNG">SAMSUNG</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Handys/SONY+ERICSSON">SONY ERICSSON</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Drucker">Drucker</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Drucker/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/BROTHER">BROTHER</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/CANON">CANON</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/EPSON">EPSON</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/HEWLETT+PACKARD">HEWLETT PACKARD</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/KONICA+MINOLTA">KONICA MINOLTA</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/KYOCERA">KYOCERA</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/LEXMARK">LEXMARK</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Drucker/OKI">OKI</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Drucker/SAMSUNG">SAMSUNG</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Software">Software</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Software/Allgemeines">Allgemeines</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/Adobe">Adobe</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/Apple">Apple</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/Corel">Corel</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/G+Data">G Data</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/Kaspersky">Kaspersky</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/Lexware">Lexware</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/McAfee">McAfee</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/Microsoft">Microsoft</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Software/Nero">Nero</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Software/Symantec">Symantec</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/PC-Hardware">PC-Hardware</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/PC-Hardware/Prozessoren">Prozessoren</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/Arbeitsspeicher">Arbeitsspeicher</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/Mainboards">Mainboards</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/Grafikkarten">Grafikkarten</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/Festplatten">Festplatten</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/Solid+State+Drives+SSD">Solid State Drives (SSD)</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/DVD-Laufwerke">DVD-Laufwerke</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/Soundkarten">Soundkarten</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/PC-Hardware/Geh%E4use">Gehäuse</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/PC-Hardware/Netzteile">Netzteile</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children"><a class="navigation-label" href="/forum/Netzwerk">Netzwerk</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first last"><a class="navigation-label" href="/forum/Netzwerk/Allgemeines">Allgemeines</a></li></ul></li><li class="navigation-entry is_passive has_children has_passive_children last"><a class="navigation-label" href="/forum/Spiele++Konsolen">Spiele &amp; Konsolen</a><ul class="navigation-section-2"><li class="navigation-entry is_passive first"><a class="navigation-label" href="/forum/Spiele++Konsolen/Sony">Sony</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Spiele++Konsolen/Nintendo">Nintendo</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Spiele++Konsolen/Microsoft">Microsoft</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Spiele++Konsolen/WIZ">WIZ</a></li><li class="navigation-entry is_passive"><a class="navigation-label" href="/forum/Spiele++Konsolen/Spiele-Software">Spiele-Software</a></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="/forum/Spiele++Konsolen/Sonstiges">Sonstiges</a></li></ul></li></ul></li><li class="navigation-entry is_passive last"><a class="navigation-label" href="http://blog.notebooksbilliger.de/" target="_blank">notebooksbilliger.de Blog</a></li></ul></div>   </div>
+   <div id="main_content" class="content">
+    <div class="rahmen">
+     <div id="wait1"></div>
+     <div id="wait2" style="margin-left:160px;">
+      <img src="http://www.notebooksbilliger.de/gfx/loader_20140331.gif" alt="" class="left" />
+      <div id ="wait2Content" style="float:right; text-align: left; padding-left: 10px;">
+          <span id ="wait2Span" class="wait-title">Ihre Anfrage wird bearbeitet.</span><br/>
+          Bitte haben Sie einen Moment Geduld.
+      </div>
+     </div>
+     <div id="wait3" style="margin-left:350px;position:fixed;top:375px;text-align:center;background:#fff;padding:30px;border:1px solid #000;display:none;z-index:99;"><img src="http://www.notebooksbilliger.de/gfx/loader_20090428.gif" alt="" /></div>
+<div class="breadcrumb breadcrumb_private">
+        <div class="text" id="path_text">
+        <div style="display: inline;" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a href="http://www.notebooksbilliger.de/" itemprop="url"> <span itemprop="title">Startseite</span></a>
+        </div>
+         <span class="icon_nbb icon_bc">&nbsp;</span> <div style="display: inline;" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><h2><a href="http://www.notebooksbilliger.de/forum" itemprop="url"><span itemprop="title">Forum</span></a></h2></div>    </div>
+        <br style="clear: both;" />
+</div>
+  <!-- w2 -->
+     <div id="epoq_bannerresult"></div>
+     <div id="epoq_contentresult"></div>
+     <div id="epoq_currentSearch"></div>
+     <div id="epoq_filterresult"></div>
+     <div id="epoq_searchresult">
+<div class="community_header_image_box">
+    <a href="http://www.notebooksbilliger.de/community/Unser+Team" class="community_header_links">Unser Community Team</a>
+    <a href="http://www.notebooksbilliger.de/community/Hilfe" class="community_header_links community_header_links_right">Hilfe</a>
+    <a href="http://www.notebooksbilliger.de/forum" title="Forum" style="display:block;"><img src="gfx/forum/head_banner_forum.gif" alt="Forum"/></a>
+</div>
+<div class="community_header_search">
+    <form action="forum/Suche/" method="post" class="community_header_form">
+        <div class="community_header_box" style="padding:4px 21px 3px 0px;width:389px;">
+            <input type="text" name="forum_search" id="community_search" onfocus="removesearchhelptxt('community_search');" onblur="setsearchhelptxt('search');" value="" style="width:342px;margin:0px;" />
+            <script type="text/javascript">
+                document.getElementById('community_search').setAttribute("autocomplete", "off");  
+            </script>
+        </div>
+        <div class="community_header_box" style="padding:0px;">
+            <input type="submit" name="search" value="Suchen" class="community_sumbit_button" style="width:80px;color:#757575;" />
+        </div>
+        <div class="community_date_box" style="border-right:none;text-align:right;font-weight:normal;">
+            10.03.2016 - 17:56        </div>
+        <input type="hidden" name="_ptoken"
+               id="_ptoken" value="c81ab6bb711cd6d8ffbbd5e236a15bbd" />
+    </form>
+    <br style="clear:both;" />
+    <script type="text/javascript">
+        var rotation = 1;
+        var opacity = 100;
+        
+        // Suchfeld vorbelegen
+        setTimeout(function() {hideHeader()}, 1);
+        setsearchhelptxt();
+    </script>
+</div>
+<div class="community_header_login">
+    <form action="https://www.notebooksbilliger.de/kundenkonto/anmelden/action/process" method="post" class="community_header_form">
+        <div class="community_header_box" style="width:410px;padding:4px 0px 3px 0px;">
+            E-Mail: <input type="text" name="email_address" size="18" style="margin-right:18px;" maxlength="90"/>
+            Passwort: <input type="password" autocomplete="off" name="password" size="18" />
+        </div>
+        <div class="community_header_box" style="padding:0px;">
+            <input type="submit" name="login" value="Login" class="community_sumbit_button" style="width:80px;color:#757575;" />
+        </div>
+    </form>
+    <a href="http://www.notebooksbilliger.de/kundenkonto/anmelden/regis/register/create/forum_account" class="community_register_box" style="color:#757575;text-align:right;border-right:none;">
+        Jetzt registrieren
+    </a>
+    <br style="clear:both;" />
+</div>
+<br />
+<div class="community_breadcrumb">
+    Sie befinden sich hier: <a href="http://www.notebooksbilliger.de/forum/">notebooksbilliger.de Forum</a></div>
+<br />
+    <div class="forum_box_small" style="margin-right:10px;">
+        <div class="forum_box_border">
+            <div class="forum_box_headline">
+                <div>Aktuelle Themen</div>
+                <br style="clear:both;" />
+            </div>
+        </div>
+        <div class="forum_box_thread">
+            <div id="forum_newest_threads">
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/andere+Produkte/Allgemeines/LG+32LF632V">LG 32LF632V</a>
+                        <br />
+                        <span class="category_path">andere Produkte / Allgemeines</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Nachtrag:
+
+Es liegt auch keine Magic Remote bei, obwohl diese in der Produktbeschreibung..                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        10.03.2016 - 07:59                        <br />
+                        <div class="thread_user">
+                            von: Gast                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/andere+Produkte/Allgemeines/LG+32LF632V/Seite/1#374525" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/Tablets/Sonstige/Verl%E4ngerung+der+Garantie">Verl&auml;ngerung der Garantie</a>
+                        <br />
+                        <span class="category_path">Tablets / Sonstige</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Muss ich die Garantieverl&auml;ngerung sofort beim Kauf eines Artikels mit erwerben ,oder kann ich sie..                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        10.03.2016 - 07:12                        <br />
+                        <div class="thread_user">
+                            von: Thomas R.                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/Tablets/Sonstige/Verl%E4ngerung+der+Garantie/Seite/1#374523" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/Notebooks/IBMLENOVO/Gibt+es+das+Modell+auch+mit+der+930M">Gibt es das Modell auch..</a>
+                        <br />
+                        <span class="category_path">Notebooks / IBM/LENOVO</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> nein.                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        09.03.2016 - 20:11                        <br />
+                        <div class="thread_user">
+                            von: Gast                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/Notebooks/IBMLENOVO/Gibt+es+das+Modell+auch+mit+der+930M/Seite/1#374522" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/Netzwerk/Allgemeines/passives+POE">passives POE</a>
+                        <br />
+                        <span class="category_path">Netzwerk / Allgemeines</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Servus Leute,
+m&ouml;chte mein Haus mit W-Lan ausstatten und habe soweit alles verlegt und ein 
+POE..                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        09.03.2016 - 21:51                        <br />
+                        <div class="thread_user">
+                            von: Robert S.                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/Netzwerk/Allgemeines/passives+POE/Seite/1#374520" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+                <div class="forum_box_thread_content" style="border:none;">
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/PC-Systeme/WEITERE/Wandbefestigung">Wandbefestigung</a>
+                        <br />
+                        <span class="category_path">PC-Systeme / WEITERE</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Hallo Leute,
+kann mir jemand sagen, ob ich das Ger&auml;t mit einer Wandhalterung befestigen kann?                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        09.03.2016 - 21:07                        <br />
+                        <div class="thread_user">
+                            von: Helmut W.                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/PC-Systeme/WEITERE/Wandbefestigung/Seite/1#374519" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="forum_box_small">
+        <div class="forum_box_border">
+            <div class="forum_box_headline">
+                <div>Aktuelle Beitr&auml;ge</div>
+                <br style="clear:both;" />
+            </div>
+        </div>
+        <div class="forum_box_thread">
+            <div id="forum_newest_posts">
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/Notebooks/ACER/SATA+oder+PCIe++NVME+SSD/Seite/1#374543">SATA oder PCIe  NVME SSD?</a>
+                        <br />
+                        <span class="category_path">Notebooks / ACER</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Hallo Matthias,
+
+sind alle Black Edition-Mainboards f&uuml;r NVMe-SSDs vorbereitet? Ich besitze das..                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        10.03.2016 - 16:34                        <br />
+                        <div class="thread_user">
+                            von: Gast                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/Notebooks/ACER/SATA+oder+PCIe++NVME+SSD/Seite/1#374543" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/Notebooks/WEITERE/Festplattenn+Medion+Erazer+P6661/Seite/1#374542">Festplatten(n) Medion..</a>
+                        <br />
+                        <span class="category_path">Notebooks / WEITERE</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Hallo,
+
+verf&uuml;gt das Ger&auml;t nur &uuml;ber einen normalen Sata-Einbauschacht f&uuml;r eine 2,5&quot; Festplatte,..                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        10.03.2016 - 16:22                        <br />
+                        <div class="thread_user">
+                            von: Benjamin D.                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/Notebooks/WEITERE/Festplattenn+Medion+Erazer+P6661/Seite/1#374542" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/PC-Systeme/WEITERE/CPU+K%FChler/Seite/1#374541">CPU K&uuml;hler</a>
+                        <br />
+                        <span class="category_path">PC-Systeme / WEITERE</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Welcher ist verbaut bzw. passt dieser auch auf einen AM3+ Sockel?                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        10.03.2016 - 15:08                        <br />
+                        <div class="thread_user">
+                            von: Gast                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/PC-Systeme/WEITERE/CPU+K%FChler/Seite/1#374541" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+
+                <div class="forum_box_thread_content" >
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/Notebooks/HEWLETT+PACKARD/HP+S6500+Bluetooth+Lautsprecher%2C+wei%DF/Seite/1#374540">HP S6500 Bluetooth..</a>
+                        <br />
+                        <span class="category_path">Notebooks / HEWLETT PACKARD</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Hallo zusammen,
+
+wir von Hewlett Packard m&ouml;chten uns bei den K&auml;ufern recht herzlich..                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        10.03.2016 - 14:54                        <br />
+                        <div class="thread_user">
+                            von: HP_Support                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/Notebooks/HEWLETT+PACKARD/HP+S6500+Bluetooth+Lautsprecher%2C+wei%DF/Seite/1#374540" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+
+                <div class="forum_box_thread_content" style="border:none;">
+                    <div class="forum_box_thread_content_left">
+                        <a href="/forum/Notebooks/HEWLETT+PACKARD/HP+S6500+Bluetooth+Lautsprecher%2C+schwarz/Seite/2#374539">HP S6500 Bluetooth..</a>
+                        <br />
+                        <span class="category_path">Notebooks / HEWLETT PACKARD</span>
+                        <br /><br />
+                        <strong>Letzter Beitrag:</strong> Hallo zusammen,
+
+wir von Hewlett Packard m&ouml;chten uns bei den K&auml;ufern recht herzlich..                        <br style="clear:both;" />
+                    </div>
+                    <div style="float:left;">
+                        <img src="gfx/forum/icon_normal.gif" alt="" />
+                    </div>
+                    <br style="clear: both;" />
+                    <div style="float: left;">
+                        10.03.2016 - 14:53                        <br />
+                        <div class="thread_user">
+                            von: HP_Support                        </div>
+                    </div>
+                    <div style="float: right;text-align: right;">
+                        <br />
+                        <a href="http://www.notebooksbilliger.de/forum/Notebooks/HEWLETT+PACKARD/HP+S6500+Bluetooth+Lautsprecher%2C+schwarz/Seite/2#374539" title="Zum letzten Beitrag" style="font-weight: normal;">Zum letzten Beitrag</a>
+                    </div>
+                    <br style="clear: both;" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="forum_box_navi" id="split_newest_posts"><div class="dead_link_title">Seiten:</div><div class="dead_link">&lt;&lt;</div><div class="delim_link">&nbsp;</div><div class="dead_link">&lt;</div><div class="delim_link">&nbsp;</div><div class="dead_link_current_site">1</div><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuellste+Beitraege/Seite/2" style="text-decoration:none;"><span class="activ_link">2</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuellste+Beitraege/Seite/3" style="text-decoration:none;"><span class="activ_link">3</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuellste+Beitraege/Seite/4" style="text-decoration:none;"><span class="activ_link">4</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuellste+Beitraege/Seite/5" style="text-decoration:none;"><span class="activ_link">5</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuellste+Beitraege/Seite/2" style="text-decoration:none;"><span class="activ_link">&gt;</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuellste+Beitraege/Seite/10" style="text-decoration:none;"><span class="activ_link">&gt;&gt;</span></a></div>
+    <div class="forum_box_navi" id="split_newest_threads" style="margin:0px 125px 0px 0px;"><div class="dead_link_title">Seiten:</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen" style="text-decoration:none;"><span class="activ_link">&lt;&lt;</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/Seite/2" style="text-decoration:none;"><span class="activ_link">&lt;</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/Seite/1" style="text-decoration:none;"><span class="activ_link">1</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/Seite/2" style="text-decoration:none;"><span class="activ_link">2</span></a><div class="delim_link">&nbsp;</div><div class="dead_link_current_site">3</div><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/Seite/4" style="text-decoration:none;"><span class="activ_link">4</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/Seite/5" style="text-decoration:none;"><span class="activ_link">5</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/Seite/4" style="text-decoration:none;"><span class="activ_link">&gt;</span></a><div class="delim_link">&nbsp;</div><a href="http://www.notebooksbilliger.de/forum/Aktuelle+Themen/Seite/10" style="text-decoration:none;"><span class="activ_link">&gt;&gt;</span></a></div>
+    <br style="clear:both;" />
+    <br />
+    <div class="forum_box_long">
+        <div class="forum_box_border">
+            <div class="forum_box_headline">
+                <div>Aktive Mitglieder</div>
+                <br style="clear:both;" />
+            </div>
+        </div>
+        <div class="forum_box_thread">
+            <div style="border-bottom:1px solid #cccccc;padding:17px 0px 10px 17px;">
+                <div class="forum_user_info" style="float:left;width:290px;">
+                    <div class="forum_user_image" style="float:left;width:80px;height:80px;">
+                        <img src="gfx//forum/user_male.gif" alt="Profilbild" />
+                    </div>
+                    <div class="forum_user_content" style="float:left;margin:0px 0px 0px 10px;">
+                        <strong>Benjamin D.</strong>
+                        <br />
+                        Mitglied seit: 10.03.2016                        <br />
+                        Beitr&auml;ge: 1                        <br /><br />
+                        Letzter Beitrag:
+                        <br />
+                        10.03.2016 - 16:22                    </div>
+                    <br style="clear:both;" />
+                </div>
+                <div class="forum_user_post" style="float:left;width:463px;">
+                    <div class="forum_box_thread_content" style="border:none;padding-top:0px;">
+                        <div style="float:left;width:400px;">
+                            <a href="/forum/Notebooks/WEITERE/Festplattenn+Medion+Erazer+P6661">Festplatten(n) Medion..</a>
+                            <br />
+                            <span class="category_path">Notebooks / WEITERE</span>
+                            <br /><br />
+                            <strong>Letzter Beitrag:</strong> Hallo,
+
+verf&uuml;gt das Ger&auml;t nur &uuml;ber einen normalen Sata-Einbauschacht f&uuml;r eine 2,5&quot; Festplatte, oder sind 2 Einbausch&auml;chte f&uuml;r eine &quot;normale&quot; Platte und eine M.2 Sata SSD vorhanden?                        </div>
+                        <div style="float:left;">
+                            <img src="gfx/forum/icon_normal.gif" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <br style="clear:both;" />
+            </div>
+            <div style="border-bottom:1px solid #cccccc;padding:17px 0px 10px 17px;">
+                <div class="forum_user_info" style="float:left;width:290px;">
+                    <div class="forum_user_image" style="float:left;width:80px;height:80px;">
+                        <img src="http://www.notebooksbilliger.de/storage/forum/avatare/0/79566_small.jpg" alt="Profilbild" />
+                    </div>
+                    <div class="forum_user_content" style="float:left;margin:0px 0px 0px 10px;">
+                        <strong>HP_Support</strong>
+                        <br />
+                        Mitglied seit: 10.03.2014                        <br />
+                        Beitr&auml;ge: 746                        <br /><br />
+                        Letzter Beitrag:
+                        <br />
+                        10.03.2016 - 14:54                    </div>
+                    <br style="clear:both;" />
+                </div>
+                <div class="forum_user_post" style="float:left;width:463px;">
+                    <div class="forum_box_thread_content" style="border:none;padding-top:0px;">
+                        <div style="float:left;width:400px;">
+                            <a href="/forum/Notebooks/HEWLETT+PACKARD/HP+S6500+Bluetooth+Lautsprecher%2C+wei%DF">HP S6500 Bluetooth..</a>
+                            <br />
+                            <span class="category_path">Notebooks / HEWLETT PACKARD</span>
+                            <br /><br />
+                            <strong>Letzter Beitrag:</strong> Hallo zusammen,
+
+wir von Hewlett Packard m&ouml;chten uns bei den K&auml;ufern recht herzlich entschuldigen!
+Nach Absprache mit Notebooksbilliger hat jeder betroffene Kunde eine Entsch&auml;digung..                        </div>
+                        <div style="float:left;">
+                            <img src="gfx/forum/icon_normal.gif" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <br style="clear:both;" />
+            </div>
+            <div style="border:none;padding:17px 0px 10px 17px;">
+                <div class="forum_user_info" style="float:left;width:290px;">
+                    <div class="forum_user_image" style="float:left;width:80px;height:80px;">
+                        <img src="http://www.notebooksbilliger.de/storage/forum/avatare/0/79566_small.jpg" alt="Profilbild" />
+                    </div>
+                    <div class="forum_user_content" style="float:left;margin:0px 0px 0px 10px;">
+                        <strong>HP_Support</strong>
+                        <br />
+                        Mitglied seit: 10.03.2014                        <br />
+                        Beitr&auml;ge: 746                        <br /><br />
+                        Letzter Beitrag:
+                        <br />
+                        10.03.2016 - 14:53                    </div>
+                    <br style="clear:both;" />
+                </div>
+                <div class="forum_user_post" style="float:left;width:463px;">
+                    <div class="forum_box_thread_content" style="border:none;padding-top:0px;">
+                        <div style="float:left;width:400px;">
+                            <a href="/forum/Notebooks/HEWLETT+PACKARD/HP+S6500+Bluetooth+Lautsprecher%2C+schwarz">HP S6500 Bluetooth..</a>
+                            <br />
+                            <span class="category_path">Notebooks / HEWLETT PACKARD</span>
+                            <br /><br />
+                            <strong>Letzter Beitrag:</strong> Hallo zusammen,
+
+wir von Hewlett Packard m&ouml;chten uns bei den K&auml;ufern recht herzlich entschuldigen!
+Nach Absprache mit Notebooksbilliger hat jeder betroffene Kunde eine Entsch&auml;digung..                        </div>
+                        <div style="float:left;">
+                            <img src="gfx/forum/icon_normal.gif" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <br style="clear:both;" />
+            </div>
+            <br style="clear:both;" />
+        </div>
+    </div>
+<div class="forum_advise" style="color: #999999;margin: 15px 0px 15px 0px;text-align: center;">
+    Legende: 
+    <img src="gfx/forum/icon_normal_legend.gif" alt="Thema Icon Erkl&auml;rung" style="top: 5px;position: relative;margin: 0px 0px 0px 20px;" />&nbsp;Thema
+    <img src="gfx/forum/icon_review_legend.gif" alt="Erfahrungsbericht Icon Erkl&auml;rung" style="top: 5px;position: relative;margin: 0px 0px 0px 20px;" />&nbsp;Erfahrungsbericht
+    <img src="gfx/forum/icon_sticky_legend.gif" alt="Wichtiges Thema Icon Erkl&auml;rung" style="top: 5px;position: relative;margin: 0px 0px 0px 20px;" />&nbsp;Wichtiges Thema
+    <img src="gfx/forum/icon_announcement_legend.gif" alt="News Icon Erkl&auml;rung" style="top: 5px;position: relative;margin: 0px 0px 0px 20px;" />&nbsp;News
+    <img src="gfx/forum/icon_poll_legend.gif" alt="Umfrage Icon Erkl&auml;rung" style="top: 5px;position: relative;margin: 0px 0px 0px 20px;" />&nbsp;Umfrage
+    <img src="gfx/forum/icon_locked_legend.gif" alt="Geschlossener Bereich Icon Erkl&auml;rung" style="top: 5px;position: relative;margin: 0px 0px 0px 20px;" />&nbsp;Geschlossener Bereich
+</div>
+<div class="forum_advise" style="color:#999999;text-align: center;">
+  <a href="http://www.notebooksbilliger.de/infocenter/section/community" target="blank">Nutzungsbedingungen</a> der notebooksbilliger.de Community
+</div>     </div>
+     <div style="clear: left;"></div>
+    <div id="main_footer" class="footer">
+        <div class="footerbox" style="width: 782px;">
+            <div class="head" style="width: 782px;">
+                <div class="footerbox_headline" style="width: 216px">
+                    Testsieger im Deutschlandtest
+                </div>
+                <div class="footerbox_headline" style="width: 229px">
+                    Schneller Versand
+                </div>
+                <div class="footerbox_headline" style="width: 257px; margin-right: 0px;">
+                    Flexible Zahlung
+                </div>
+            </div>
+            <div class="body clearfix" style="width: 784px;">
+                <div class="footerbox_body" style="padding-left: 5px; padding-top:4px; width: 241px;">
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/aboutus"
+                       class="doha_award"
+                       title="Onlineshops für Technik im Deutschlandtest - notebooksbilliger.de ist Sieger im Bereich Kundenzufriedenheit">
+                        <img src="gfx/footer/onlineshop_testsieger_2015.png"
+                             class="footer_grid_image"
+                             alt="Onlineshops für Technik im Deutschlandtest - notebooksbilliger.de ist Sieger im Bereich Kundenzufriedenheit" />
+                    </a>
+                </div>
+                <div class="footerbox_body" style="width: 250px" id="wtxy-fast_delivery">
+                    <span style="margin-left: 8px;">Wir versenden &uuml;berwiegend mit:</span>
+                    <!-- ITB-15848 DHL Strike
+                    <span class="highlight_green">sofort ab Lager</span>: 1-2 Werktage Lieferzeit
+                    <br/>
+                    <div>
+                        <div class="footerExpressText">
+                            <a rel="nofollow"
+                               href=""
+                               target="_blank"
+                               data-wt="Info 24h Express"
+                               onclick="popupWindow('/popup.php/section/express', 'Express', 'width=780, height=530'); return false;">
+                                <img src="footer/24h_Express.png"
+                                     class="footer_grid_image"
+                                     alt="24h Express" title="bis 22 Uhr bestellt: am Folgetag vor 12 geliefert" />
+                            </a>
+                        </div>
+                    </div>-->
+                    <a href="https://www.myhermes.de/wps/portal/paket/Home/privatkunden/home" target="_blank" data-wt="Info Hermes Versand">
+                        <img src="gfx/footer/logo_hermes.png" style="float: left; margin-top: 35px;margin-left: 13px;" alt="Hermes">
+                    </a>
+                    <a href="http://www.ups.com/de" target="_blank" data-wt="Info UPS Versand">
+                        <img src="gfx/footer/logo_ups.png" style="float: right; margin-top: 15px; margin-right: 35px;" alt="UPS">
+                    </a>
+                </div>
+                <div class="footerbox_body" style="width: 200px; margin-right: 0px;" id="wtxy-flex_payment">
+                    <img src="gfx/footer/payment_options_2015-01-20.png"
+                         alt="Bezahlm&ouml;glichkeiten"
+                         class="footer_grid_image"
+                         usemap="#payOptions" />
+                    <map name="payOptions">
+                        <area shape="rect"
+                              coords="1,1,70,43"
+                              href="http://www.notebooksbilliger.de/infocenter/section/masterpass"
+                              data-wt=""
+                              title="MasterPass"
+                              alt="MasterPass"/>
+                        <area shape="rect"
+                              coords="80,1,230,43"
+                              href="http://www.notebooksbilliger.de/infocenter/section/pay_kreditkarte"
+                              data-wt=""
+                              title="Kreditkarte"
+                              alt="Kreditkarte"/>
+                        <area shape="rect"
+                              coords="1,50,110,85"
+                              href="http://www.notebooksbilliger.de/infocenter/section/pay_paypal"
+                              data-wt=""
+                              title="Paypal"
+                              alt="Paypal"/>
+                        <area shape="rect"
+                              coords="120,50,230,85"
+                              href="http://www.notebooksbilliger.de/infocenter/section/pay_sofortueberweisung"
+                              data-wt=""
+                              title="Sofort&uuml;berweisung"
+                              alt="Sofort&uuml;berweisung"/>
+                        <area shape="rect"
+                              coords="1,95,100,110"
+                              href="http://www.notebooksbilliger.de/infocenter/section/pay_cod"
+                              data-wt=""
+                              title="Nachnahme"
+                              alt="Nachnahme"/>
+                        <area shape="rect"
+                              coords="1,115,85,130"
+                              href="http://www.notebooksbilliger.de/infocenter/section/pay_prepayment"
+                              data-wt=""
+                              title="Vorkasse"
+                              alt="Vorkasse"/>
+                        <area shape="rect"
+                              coords="105,95,230,130"
+                              href="http://www.notebooksbilliger.de/infocenter/section/pay_finanzierung"
+                              data-wt=""
+                              title="Finanzierung"
+                              alt="Finanzierung"/>
+                    </map>
+                </div>
+            </div>
+        </div>
+        <div class="footerbox" style="width: 782px;">
+            <div class="head">
+                <div class="footerbox_headline">
+                    Meine Daten
+                </div>
+                <div class="footerbox_headline">
+                    Unternehmen
+                </div>
+                <div class="footerbox_headline">
+                    Service
+                </div>
+                <div class="footerbox_headline">
+                    Bestellung
+                </div>
+                <div class="footerbox_headline last" style="margin-right: 0px;">
+                    mobil informiert
+                </div>
+            </div>
+            <div class="body clearfix" style="width: 782px;">
+                <div class="footerbox_body" id="wtxy-myData">
+                    <!--Meine Daten-->
+                    <a href="https://www.notebooksbilliger.de/kundenkonto/anmelden/action/process" onclick="showLogin();return false;" rel="nofollow">Anmelden</a><br/>
+                    <a href="https://www.notebooksbilliger.de/warenkorb"
+                       rel="nofollow">Warenkorb</a><br/>
+                    <a href="https://www.notebooksbilliger.de/kasse/anmelden"
+                       rel="nofollow">Kasse</a><br/>
+                    <a href="https://www.notebooksbilliger.de/merkzettel" rel="nofollow">Merkzettel</a><br/>
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/privacy" rel="nofollow">Datenschutz</a><br/>
+                </div>
+                <div class="footerbox_body" id="wtxy-company">
+                    <!--Unternehmen-->
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/aboutus" rel="nofollow" data-wt="Über uns">&Uuml;ber
+                        Uns</a><br/>
+                    <a href="http://www.notebooksbilliger.de/partnerprogramm" rel="nofollow">Partnerprogramm</a><br/>
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/impressum" rel="nofollow">Impressum</a><br/>
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/conditions"
+                       rel="nofollow">AGB</a> / <a href="http://www.notebooksbilliger.de/infocenter/section/conditions#revocation"
+                       rel="nofollow">Widerrufsrecht</a><br/>
+                    <a href="http://www.notebooksbilliger.de/karriere+center" rel="nofollow">Karrierecenter</a><br/>
+                </div>
+                <div class="footerbox_body" id="wtxy-service">
+                    <!--Service-->
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/contact_us" rel="nofollow">Kontakt</a><br/>
+                    <a href="http://www.notebooksbilliger.de/presse" rel="nofollow">Pressecenter</a><br/>
+                    <a href="http://www.notebooksbilliger.de/produktberater" rel="nofollow">Produktberater</a><br/>
+                    <a href="http://www.notebooksbilliger.de/studentenprogramm" rel="nofollow">Studentenprogramm</a><br/>
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/kundenkarte" rel="nofollow">NBB BonusCard</a><br/>
+                </div>
+                <div class="footerbox_body" id="wtxy-order">
+                    <!--Bestellung-->
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/shipping" rel="nofollow">Versandkosten</a><br/>
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/availability" rel="nofollow">Lieferzeiten</a><br/>
+                    <a href="http://www.notebooksbilliger.de/popup/section/express" rel="nofollow"
+                       target="_blank"
+                       onclick="popupWindow('http://www.notebooksbilliger.de/popup/section/express', '24h Express', 'width=640, height=500'); return false;">
+                        24h Express
+                    </a><br/>
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/store/city/sarstedt"
+                       rel="nofollow">Ladengesch&auml;fte</a><br/>
+                    <a href="http://www.notebooksbilliger.de/infocenter/section/pay_finanzierung"
+                       rel="nofollow">Ratenzahlung</a><br/>
+                </div>
+                <div class="footerbox_body" style="margin-right: 0px; width: 135px;padding-left: 15px;" id="wtxy-mobile_informed">
+                    <!--mobil informiert-->
+                    <a href="http://www.notebooksbilliger.de/newsletter" rel="nofollow" class="footerNewsletter footerSprite"></a>
+                    <br/>
+                    <a href="https://play.google.com/store/apps/details?id=com.nbb.app&hl=de"
+                       rel="nofollow">Android App</a><br/>
+                    <a href="http://itunes.apple.com/de/app/nbb/id481326696?mt=8&partnerId=2003"
+                       rel="nofollow">iOS App</a>
+                </div>
+                <br style="clear:left;"/>
+            </div>
+        </div>
+    <div class="pricenotice" id="wtxy-price_notice">
+Alle Preisangaben sind in Euro inkl. MwSt. und zzgl. <a href="http://www.notebooksbilliger.de/infocenter/versandkosten" target="_blank" rel="nofollow">Versandkosten</a> ab 7,99 Euro innerhalb Deutschlands. Die Versandkosten richten sich nach Versandart, Gr&ouml;&szlig;e und Logistikdienstleister. Gro&szlig;mengenabgaben vorbehalten. <a href="http://www.notebooksbilliger.de/infocenter/versandkosten" target="_blank" rel="nofollow">Versand</a> von TV-Ger&auml;ten &uuml;ber 107 cm (42") ab 19,99 Euro innerhalb Deutschlands. Produktbilder und Angaben zu technischen Produkteigenschaften ohne Gew&auml;hr.<br />
+     <br />
+     <sup>*</sup>Bei versandkostenfreien/frachtfreien Artikeln ist der Versand innerhalb Deutschlands mit Hermes bei Zahlung per Vorkasse f&uuml;r Sie kostenfrei.<br />
+
+        
+    </div>
+    <p class="pricenotice">
+        1) Repr&auml;sentatives Beispiel: Nettokreditbetrag 1.000 &euro;, 0% eff. Jahreszins, 0% Sollzinssatz p.a. gebunden, 12 Monate Laufzeit, mtl. Rate 83,33 Euro, Gesamtfinanzierungsbetrag 1.000 Euro,
+        Rechenbeispiel entspricht dem repr&auml;sentativen Beispiel nach § 6a PangV. Berechnung ohne Kreditversicherung. Es handelt sich hierbei um ein repr&auml;sentatives Beispiel. Die monatliche Rate f&uuml;r
+        Ihre Bestellung ist abh&auml;ngig von der gew&auml;hlten Laufzeit und dem Warenwert und wird Ihnen auf den Artikelseiten, im Warenkorb und an der Kasse angezeigt. Voraussetzungen f&uuml;r die 0%Finanzierung sind der
+        Abschluss eines entsprechenden Darlehensvertrages und des damit verbundenen Kreditkartenvertrages zwischen dem Kunden und der Hanseatic Bank GmbH & Co KG, Bramfelder Chaussee 101, 22177 Hamburg.
+        Mehr Informationen finden Sie in den <a href="/popup_customer_card_program_agb.php" target="_blank">Allgemeinen Gesch&auml;ftsbedingungen</a> der Hanseatic Bank.
+    </p>
+    <p class="footercopyright">
+        <strong>Copyright  2002-2016 notebooksbilliger.de AG.</strong> Alle Rechte vorbehalten.<br/>
+    </p>
+    <div class="pricenotice">
+        Ultrabook, Celeron, Celeron Inside, Core Inside, Intel, Intel Logo, Intel Atom, Intel Atom Inside, Intel Core, Intel Inside, Intel Inside Logo, Intel vPro, Itanium, Itanium Inside, Pentium, Pentium Inside, vPro Inside, Xeon, Xeon Phi, und Xeon Inside sind Marken der Intel Corporation in den USA und anderen L&auml;ndern.
+    </div>
+   </div>
+    </div>
+   </div>
+  <!-- skyscraper -->
+                <div class="skyscraper">
+                    <div id='wideSkyBanner'>
+                        <script type='text/javascript'>
+                            if (typeof googletag !== 'undefined') {
+                                googletag.cmd.push(function() {
+                                    googletag.display('wideSkyBanner');
+                                });
+                            }
+                        </script>
+                    </div>
+                </div>
+              </div>
+<script type="text/javascript">
+    window.___gcfg = {
+        lang: 'de'
+    };
+
+    (function() {
+        var po   = document.createElement('script');
+        po.type  = 'text/javascript';
+        po.async = true;
+        po.src   = 'https://apis.google.com/js/plusone.js';
+        var s    = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+  <!-- w3 -->
+    <script type = "text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id     = 1071915950;
+        var google_conversion_format = "3";
+        var google_conversion_label  = "dIBbCLKLxgQQrseQ_wM";
+        var google_custom_params     = window.google_tag_params;
+        var google_remarketing_only  = true;
+        /* ]]> */
+    </script>
+    <script class="google_image" type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+        <img class="google_image" alt=""
+             src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1071915950/?value=0&label=dIBbCLKLxgQQrseQ_wM&guid=ON&script=0" />
+    </noscript>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+
+            var cAutoListener = new AutoListener();
+            if (typeof cAutoListener !== 'undefined') {
+                cAutoListener.listen();
+            }
+         });
+    </script>
+    <style>
+    #cookieNotice {
+        background-color: #f6f6f6;
+        margin-top: -3px;
+        margin-bottom: 3px;
+        line-height: 15px;
+        height: 32px;
+    }
+    #noticeInner {
+        font-size: 11px;
+        color: #838383;
+        margin: 0 auto;
+        padding:7px 0;
+        width: 940px;
+    }
+    #cookieNoticeCloser {
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+        margin-left:5px;
+    }
+    #cookieNoticeText {
+        padding:7px 0;
+        font-family: "Roboto-Regular";
+
+    }
+</style>
+
+<div id="cookieNotice">
+    <div id="noticeInner">
+        <span id="cookieNoticeText">
+              <i>notebooksbilliger.de</i> verwendet
+              <a href="http://www.notebooksbilliger.de/infocenter/section/privacy">Cookies</a>
+              , um Ihnen das bestm&ouml;gliche Shopping-Erlebnis zu bieten. Wenn Sie auf der Seite weitersurfen, stimmen Sie der
+              <a href="http://www.notebooksbilliger.de/infocenter/section/privacy">Cookie-Nutzung</a> zu.
+        </span>
+        <span id="cookieNoticeCloser" onclick="hideCookieNotice();">x
+        </span>
+    </div>
+</div>
+
+<script>
+    function hideCookieNotice() {
+        jQuery('#cookieNotice').slideUp();
+    }
+    
+    if (document.cookie.indexOf('hide1CookieNotice=1') != -1) {
+        jQuery('#cookieNotice').hide();
+        refreshCookieForCookieNotice();
+    } else {
+        jQuery('#cookieNotice').prependTo('body');
+        refreshCookieForCookieNotice();
+    }
+
+    function refreshCookieForCookieNotice() {
+        var now = new Date();
+        var time = now.getTime();
+        var expireTime = time + 1000*60*60*24*365;
+        now.setTime(expireTime);
+        document.cookie = 'hide1CookieNotice=1;expires=' + now.toUTCString()+ 'path=/;';
+    }
+</script>
+ <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"911da09f94","applicationID":"11944912","transactionName":"YFUDN0NYCBBQVExQXlkfNBFYFgAMQ0JVF0FfQA==","queueTime":0,"applicationTime":422,"atts":"TBIAQQtCGx4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -40,7 +40,7 @@ Web page is represented as a sequence of ``<a>`` elements.
 Training Data
 =============
 
-Data is stored at autopager/data. HTML source code (converted to utf8)
+Data is stored at autopager/data. Raw HTML source code
 is in autopager/data/html folder. Annotations are in autopager/data/data.csv
 file; elements are stored as CSS selectors.
 
