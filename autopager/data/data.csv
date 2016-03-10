@@ -2,7 +2,7 @@ File Name,Page URL,Encoding,PREV,PAGE,NEXT,LAST,FIRST,failed
 1,https://forums.oneplus.net/threads/marsh-cm13.405700/,UTF-8,,".PageNavNext+ a , .currentPage , .scrollable a",.text,,,
 2,https://forums.oneplus.net/threads/marsh-cm13.405700/page-5,UTF-8,.text:nth-child(1),".PageNavNext+ a , .scrollable a , .text+ a",a+ .text,,,
 3,https://forums.oneplus.net/threads/marsh-cm13.405700/page-243?versionfrom=2014,UTF-8,.text,".text+ a , .currentPage , .items a",,,,
-4,http://www.zoeken.nu/115755/bedrijf/rabobank-drechtsteden.html,UTF-8,,,,,,
+4,http://www.zoeken.nu/115755/bedrijf/rabobank-drechtsteden.html,cp1252,,,,,,
 5,https://oneplus.net/,UTF-8,,,,,,
 6,https://www.mypapershop.com/patricks-day-supplies.html,UTF-8,,.searchspring-pageSelect,.searchspring-next,,,
 7,https://www.mypapershop.com/mm5/merchant.mvc?Session_ID=56e7cf6116038eec3b953a976519a103&Store_Code=MPS&Screen=CTGY&Category_Code=patricks-day-supplies&CatListingOffset=24&Offset=24&Per_Page=24&Sort_By=disp_order,UTF-8,.searchspring-previous,.searchspring-pageSelect,.searchspring-next,,,
