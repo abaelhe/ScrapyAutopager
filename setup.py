@@ -24,6 +24,7 @@ setup(
     install_requires=[
         "six",
         "w3lib >= 1.13.0",
+        "parsel >= 1.0.1",
     ],
     package_data={
         'autopager': [
@@ -35,7 +36,6 @@ setup(
         'with-deps': [
             'scikit-learn >= 0.17',
             'scipy',
-            'lxml',
             'sklearn-crfsuite >= 0.3.1',
         ],
     },
