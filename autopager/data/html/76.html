@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+<link rel="profile" href="//gmpg.org/xfn/11"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rust &laquo; </title>
+<link rel="alternate" type="application/rss+xml" title="Rust &raquo; Feed" href="//playrust.com/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Rust &raquo; Comments Feed" href="//playrust.com/comments/feed/"/>
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/playrust.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-0.1em!important;background:none!important;padding:0!important;}</style>
+<link rel='stylesheet' id='tw-bootstrap-css' href='//playrust.com/wp-content/themes/the-bootstrap/css/bootstrap.min.css?ver=2.0.3' type='text/css' media='all'/>
+<link rel='stylesheet' id='the-bootstrap-css' href='//playrust.com/wp-content/themes/the-bootstrap/style.min.css?ver=2.0.1' type='text/css' media='all'/>
+<style id='the-bootstrap-inline-css' type='text/css'>body>.container{margin-top:68px;}@media(min-width: 980px){body > .container{margin-top:58px;}}
+</style>
+<link rel='stylesheet' id='jetpack_css-css'  href='//playrust.com/wp-content/plugins/jetpack/css/jetpack.css?ver=3.9.1' type='text/css' media='all' />
+<script type='text/javascript' src='//playrust.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='//playrust.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel='https://api.w.org/' href='//playrust.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="//playrust.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="//playrust.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.2" />
+<link rel='shortlink' href='//wp.me/493tP' />
+
+<link rel='dns-prefetch' href='//jetpack.wordpress.com'>
+<link rel='dns-prefetch' href='//s0.wp.com'>
+<link rel='dns-prefetch' href='//s1.wp.com'>
+<link rel='dns-prefetch' href='//s2.wp.com'>
+<link rel='dns-prefetch' href='//public-api.wordpress.com'>
+<link rel='dns-prefetch' href='//0.gravatar.com'>
+<link rel='dns-prefetch' href='//1.gravatar.com'>
+<link rel='dns-prefetch' href='//2.gravatar.com'>
+<link rel='dns-prefetch' href='//i0.wp.com'>
+<link rel='dns-prefetch' href='//i1.wp.com'>
+<link rel='dns-prefetch' href='//i2.wp.com'>
+	<style type="text/css">
+				#branding hgroup {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+			</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #1c1313; }
+</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Rust" />
+<meta property="og:url" content="http://playrust.com/" />
+<meta property="og:site_name" content="Rust" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_US" />
+	<!--[if lt IE 9]>
+		<script src="//playrust.com/wp-content/themes/the-bootstrap/js/html5shiv.min.js" type="text/javascript"></script>
+		<script src="//playrust.com/wp-content/themes/the-bootstrap/js/respond.min.js" type="text/javascript"></script>
+	<![endif]-->
+				<link rel="stylesheet" id="custom-css-css" type="text/css" href="//playrust.com/?custom-css=1&#038;csblog=1&#038;cscache=6&#038;csrev=99" />
+					
+		<link href='//fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		
+	</head>
+	
+	<body class="home blog custom-background content-sidebar">
+		
+		<div class="pagewrapper">
+		<div class="container">
+			
+			<div id="page" class="hfeed row">
+								<header id="branding" role="banner" class="span12">
+										
+										<center>
+					<a id="header-image" href="http://playrust.com/" title="Rust" rel="home">
+						<img src="//playrust.com/wp-content/uploads/2013/12/RustLogo-Normal-Transparent.png" width="428" height="100" alt="" />
+					</a>
+					<div id='earlyaccess'><a href='/early-access/'><span class='icon'>&#xf005;</span> early access <span class='icon'>&#xf005;</span></a></div>
+					</center>
+					
+					<nav id="access" role="navigation">
+						<h3 class="assistive-text">Main menu</h3>
+												<div class="navbar navbar-fixed-top navbar-inverse">
+							<div class="navbar-inner">
+								<div class="container">
+									<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+									<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</a>
+																		<div class="nav-collapse">
+										<div class="menu-main-menu-container"><ul id="menu-main-menu" class="nav"><li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-28 active"><a href="http://playrust.com/">News</a></li>
+<li id="menu-item-869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-869 dropdown" data-dropdown="dropdown"><a href="http://playrust.com/about/" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-1122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1122"><a href="http://playrust.com/about/">About Rust</a></li>
+	<li id="menu-item-2797" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2797"><a href="http://playrust.com/screenshots/">Screenshots</a></li>
+	<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="http://playrust.com/intro-video/">Intro Video</a></li>
+	<li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="http://playrust.com/faq/">FAQ</a></li>
+	<li id="menu-item-1123" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1123"><a href="http://playrust.com/early-access/">What Is Early Access</a></li>
+</ul>
+</li>
+<li id="menu-item-88" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-88 dropdown" data-dropdown="dropdown"><a href="http://facepunch.com/forumdisplay.php?f=415" class="dropdown-toggle" data-toggle="dropdown">Discussion <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-1111" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111"><a href="http://facepunch.com/forumdisplay.php?f=415">Facepunch Forum</a></li>
+	<li id="menu-item-1110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1110"><a href="http://www.reddit.com/r/playrust">Reddit</a></li>
+</ul>
+</li>
+<li id="menu-item-1115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1115 dropdown" data-dropdown="dropdown"><a href="https://trello.com/playrust" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-1117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1117"><a href="https://trello.com/b/DBOhTfQm/rust-concepts">Concept Art Board</a></li>
+	<li id="menu-item-1116" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1116"><a href="https://trello.com/b/1iXNdiYw/rust-art">Art Board</a></li>
+	<li id="menu-item-1124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1124"><a href="http://translate.playrust.com/">Translations</a></li>
+	<li id="menu-item-2802" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2802"><a href="https://github.com/Facepunch/rust-issues/issues">Issue Tracker</a></li>
+	<li id="menu-item-1119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1119"><a href="https://twitter.com/RustUpdates">@RustUpdates</a></li>
+	<li id="menu-item-1120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1120"><a href="https://twitter.com/playrust">@PlayRust</a></li>
+</ul>
+</li>
+<li id="menu-item-145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-145 dropdown" data-dropdown="dropdown"><a href="https://www.humblebundle.com/store/p/rust_storefront" class="dropdown-toggle" data-toggle="dropdown">Buy <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-1104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1104"><a href="https://www.humblebundle.com/store/p/rust_storefront">Humble Store</a></li>
+	<li id="menu-item-1103" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1103"><a href="http://store.steampowered.com/app/252490/">Steam</a></li>
+</ul>
+</li>
+<li id="menu-item-1102" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1102 dropdown" data-dropdown="dropdown"><a href="http://support.facepunchstudios.com/" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-1113" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1113"><a href="http://support.facepunchstudios.com/">Help from Facepunch</a></li>
+	<li id="menu-item-1112" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112"><a href="http://facepunch.com/forumdisplay.php?f=415">Community Support</a></li>
+	<li id="menu-item-2918" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2918"><a href="http://playrust.com/dedicated-server/">Dedicated Server</a></li>
+</ul>
+</li>
+</ul></div>								    </div>
+								</div>
+							</div>
+						</div>
+											</nav><!-- #access -->
+									</header><!-- #branding -->
+<section id="primary" class="offset2 span8">
+		<div id="content" role="main">
+		<article id="post-6032" class="post-6032 post type-post status-publish format-standard hentry category-uncategorized">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/devblog-101/" title="Permalink to Devblog 101" rel="bookmark">Devblog 101</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/devblog-101/" title="11:23 am" rel="bookmark"><time class="entry-date" datetime="2016-03-10T11:23:22+00:00" pubdate>10 March 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/garry-newman/" title="View all posts by Garry Newman" rel="author">Garry Newman</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="https://playrust.com/devblog-101/"><img src="//i0.wp.com/files.facepunch.com/garry/dfedc.jpg?resize=740%2C321" class="alignnone" data-recalc-dims="1" /></a></p>
+<p> <a href="http://playrust.com/devblog-101/#more-6032" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-6032 -->
+<article id="post-5978" class="post-5978 post type-post status-publish format-standard hentry category-uncategorized">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/devblog-99-1/" title="Permalink to Devblog 99.1" rel="bookmark">Devblog 99.1</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/devblog-99-1/" title="8:00 pm" rel="bookmark"><time class="entry-date" datetime="2016-03-03T20:00:36+00:00" pubdate>3 March 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/devblog-99-1/"><img src="//i2.wp.com/files.facepunch.com/buck2016/March/03/swoosh2.jpg?resize=740%2C378" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>We&#8217;ve finally reached triple digits! Devblog 99.1. There&#8217;s more on the upcoming XP system and tech trees. We&#8217;ve added sexier tunnels, made some proc-gen tweaks, shrunk the default world size, and made lots of fixes and tweaks. This update wipes the servers. </p>
+<p> <a href="http://playrust.com/devblog-99-1/#more-5978" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5978 -->
+<article id="post-5951" class="post-5951 post type-post status-publish format-standard hentry category-community">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/community-update-78/" title="Permalink to Community Update 78" rel="bookmark">Community Update 78</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/community-update-78/" title="3:03 pm" rel="bookmark"><time class="entry-date" datetime="2016-03-01T15:03:13+00:00" pubdate>1 March 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/community-update-78/"><img src="//i1.wp.com/files.facepunch.com/buck2016/March/01/friendhdr.jpg?resize=740%2C445" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>Grim fan art, a cinematic raid cam, another real-world Rust weapon, and lots more. </p>
+<p> <a href="http://playrust.com/community-update-78/#more-5951" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5951 -->
+<article id="post-5922" class="post-5922 post type-post status-publish format-standard hentry category-uncategorized">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/devblog-99/" title="Permalink to Devblog 99" rel="bookmark">Devblog 99</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/devblog-99/" title="2:03 pm" rel="bookmark"><time class="entry-date" datetime="2016-02-25T14:03:45+00:00" pubdate>25 February 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/devblog-99/"><img src="//i1.wp.com/s3-eu-west-1.amazonaws.com/files.facepunch.com/vince/2016/February/25/dungeons_art_013.jpg?resize=740%2C416" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>Reactive targets, sexier dungeons, the upcoming XP system, a closer look at female player character, and lots more. </p>
+<p> <a href="http://playrust.com/devblog-99/#more-5922" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5922 -->
+<article id="post-5894" class="post-5894 post type-post status-publish format-standard hentry category-community">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/community-update-77/" title="Permalink to Community Update 77" rel="bookmark">Community Update 77</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/community-update-77/" title="4:06 pm" rel="bookmark"><time class="entry-date" datetime="2016-02-23T16:06:12+00:00" pubdate>23 February 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="https://playrust.com/community-update-77/"><img src="//i1.wp.com/files.facepunch.com/buck2016/February/23/commhdr1.jpg?resize=740%2C329" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>How someone 3D printed a Rust AK-47, and how you can do it too. </p>
+<p> <a href="http://playrust.com/community-update-77/#more-5894" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5894 -->
+<article id="post-5866" class="post-5866 post type-post status-publish format-standard hentry category-uncategorized">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/devblog-98/" title="Permalink to Devblog 98" rel="bookmark">Devblog 98</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/devblog-98/" title="8:03 pm" rel="bookmark"><time class="entry-date" datetime="2016-02-18T20:03:06+00:00" pubdate>18 February 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/devblog-98/"><img src="//i0.wp.com/files.facepunch.com/buck2016/February/18/hdr1.jpg?resize=740%2C374" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>The long wait is over: we&#8217;ve added server queues! We&#8217;ve also been revamping Hapis, adding right-click to the inventory, concepting rad animals, and optimising. Always optimising. </p>
+<p> <a href="http://playrust.com/devblog-98/#more-5866" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5866 -->
+<article id="post-5840" class="post-5840 post type-post status-publish format-standard hentry category-community">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/community-update-76/" title="Permalink to Community Update 76" rel="bookmark">Community Update 76</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/community-update-76/" title="4:49 pm" rel="bookmark"><time class="entry-date" datetime="2016-02-16T16:49:17+00:00" pubdate>16 February 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/community-update-76/ "><img src="//i2.wp.com/files.facepunch.com/buck2016/February/16/hdr.jpg?resize=740%2C418" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>Hell on Rust.</p>
+<p> <a href="http://playrust.com/community-update-76/#more-5840" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5840 -->
+<article id="post-5799" class="post-5799 post type-post status-publish format-standard hentry category-uncategorized">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/devblog-97/" title="Permalink to Devblog 97" rel="bookmark">Devblog 97</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/devblog-97/" title="10:20 pm" rel="bookmark"><time class="entry-date" datetime="2016-02-11T22:20:33+00:00" pubdate>11 February 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/devblog-97/"><img src="//i2.wp.com/files.facepunch.com/buck2016/February/11/tops2.jpg?resize=740%2C351" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>Lots of balance tweaks this update: external walls and masks are no longer OP, while the Code Lock takes a buff in damage dealt. There&#8217;s the first look at the flamethrower in-game, though you&#8217;ll have to wait a little bit longer to get your fingers burnt. </p>
+<p> <a href="http://playrust.com/devblog-97/#more-5799" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5799 -->
+<article id="post-5778" class="post-5778 post type-post status-publish format-standard hentry category-community">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/community-update-75/" title="Permalink to Community Update 75" rel="bookmark">Community Update 75</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/community-update-75/" title="3:55 pm" rel="bookmark"><time class="entry-date" datetime="2016-02-09T15:55:00+00:00" pubdate>9 February 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/community-update-75/ "><img src="//i2.wp.com/files.facepunch.com/buck2016/February/09/rustsleeps.png?resize=740%2C395" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>The joy of small servers, what not to do in Rust, and the The Perfect Raid spawns a Youtube series. </p>
+<p> <a href="http://playrust.com/community-update-75/#more-5778" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5778 -->
+<article id="post-5755" class="post-5755 post type-post status-publish format-standard hentry category-uncategorized">
+		
+	<header class="page-header">
+	<h1 class="entry-title"><a href="http://playrust.com/devblog-96/" title="Permalink to Devblog 96" rel="bookmark">Devblog 96</a></h1>		<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="http://playrust.com/devblog-96/" title="7:32 pm" rel="bookmark"><time class="entry-date" datetime="2016-02-04T19:32:32+00:00" pubdate>4 February 2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://playrust.com/author/buckfacepunchstudios-com/" title="View all posts by Craig Pearson" rel="author">Craig Pearson</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+		<div class="entry-content clearfix">
+		<p><a href="http://playrust.com/devblog-96/"><img src="//i0.wp.com/files.facepunch.com/buck2016/February/04/2016-02-04_00050.jpg?resize=740%2C392" class="alignnone" data-recalc-dims="1" /></a></p>
+<p>Ladder hatches are in. As well as adding floor frames, this now makes the game 666% more sinister. This is a server wiping update, so we&#8217;ve tweaked Proc Gen a little. There&#8217;s info on the upcoming XP and levelling system, and lots more. </p>
+<p> <a href="http://playrust.com/devblog-96/#more-5755" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+	</div><!-- .entry-content -->
+	
+	
+	</article><!-- #post-5755 -->
+<nav class="pagination pagination-centered clearfix"><ul class='page-numbers'>
+	<li><span class='page-numbers current'>1</span></li>
+	<li><a class='page-numbers' href='http://playrust.com/page/2/'>2</a></li>
+	<li><a class='page-numbers' href='http://playrust.com/page/3/'>3</a></li>
+	<li><a class='page-numbers' href='http://playrust.com/page/4/'>4</a></li>
+	<li><span class="page-numbers dots">&hellip;</span></li>
+	<li><a class='page-numbers' href='http://playrust.com/page/24/'>24</a></li>
+	<li><a class="next page-numbers" href="http://playrust.com/page/2/">Next &raquo;</a></li>
+</ul>
+</nav>	</div><!-- #content -->
+	</section><!-- #primary -->
+
+<section id="secondary" class="widget-area span4" role="complementary">
+	<aside id="archives" class="widget well widget_archives"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='http://playrust.com/2016/03/'>March 2016</a></li>
+	<li><a href='http://playrust.com/2016/02/'>February 2016</a></li>
+	<li><a href='http://playrust.com/2016/01/'>January 2016</a></li>
+	<li><a href='http://playrust.com/2015/12/'>December 2015</a></li>
+	<li><a href='http://playrust.com/2015/11/'>November 2015</a></li>
+	<li><a href='http://playrust.com/2015/10/'>October 2015</a></li>
+	<li><a href='http://playrust.com/2015/09/'>September 2015</a></li>
+	<li><a href='http://playrust.com/2015/08/'>August 2015</a></li>
+	<li><a href='http://playrust.com/2015/07/'>July 2015</a></li>
+	<li><a href='http://playrust.com/2015/06/'>June 2015</a></li>
+	<li><a href='http://playrust.com/2015/05/'>May 2015</a></li>
+	<li><a href='http://playrust.com/2015/04/'>April 2015</a></li>
+	<li><a href='http://playrust.com/2015/03/'>March 2015</a></li>
+	<li><a href='http://playrust.com/2015/02/'>February 2015</a></li>
+	<li><a href='http://playrust.com/2015/01/'>January 2015</a></li>
+	<li><a href='http://playrust.com/2014/12/'>December 2014</a></li>
+	<li><a href='http://playrust.com/2014/11/'>November 2014</a></li>
+	<li><a href='http://playrust.com/2014/10/'>October 2014</a></li>
+	<li><a href='http://playrust.com/2014/09/'>September 2014</a></li>
+	<li><a href='http://playrust.com/2014/08/'>August 2014</a></li>
+	<li><a href='http://playrust.com/2014/07/'>July 2014</a></li>
+	<li><a href='http://playrust.com/2014/06/'>June 2014</a></li>
+	<li><a href='http://playrust.com/2014/05/'>May 2014</a></li>
+	<li><a href='http://playrust.com/2014/04/'>April 2014</a></li>
+	<li><a href='http://playrust.com/2014/03/'>March 2014</a></li>
+	<li><a href='http://playrust.com/2014/02/'>February 2014</a></li>
+	<li><a href='http://playrust.com/2014/01/'>January 2014</a></li>
+	<li><a href='http://playrust.com/2013/12/'>December 2013</a></li>
+	<li><a href='http://playrust.com/2013/11/'>November 2013</a></li>
+		</ul>
+		</aside><aside id="meta" class="widget well widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="http://playrust.com/wp-login.php">Log in</a></li>
+			<li><a href="http://playrust.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://playrust.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside></section><!-- #secondary .widget-area -->
+			</div><!-- #page -->
+		</div><!-- .container -->
+		
+			<?phptha_footer_before(); ?>
+				<footer id="colophon" role="contentinfo" class="span12">
+										<div id="page-footer" class="clearfix">
+<center><a href='http://www.facepunchstudios.com/'>Facepunch Studios LTD</a> | <a href='/tos'>TOS</a> | <a href='http://eepurl.com/bpGDRH'>Devblog Mailing List</a></center>
+					</div><!-- #page-footer .well .clearfix -->
+					
+					
+					<div id='footer_social'>
+						
+						<a href='https://twitter.com/playrust'>&#xf099;</a>
+						<a href='https://www.facebook.com/facepunchrust'>&#xf082;</a>
+						<a href='https://plus.google.com/+PLAYRUST1/'>&#xf0d5;</a>
+						<a href='https://trello.com/playrust'>&#xf181;</a>
+						
+						
+					
+						
+					</div>
+					
+					<div id='footer_platforms'>
+						
+						<a href='http://store.steampowered.com/app/252490/'>&#xf17c;</a>
+						<a href='http://store.steampowered.com/app/252490/'>&#xf179;</a>
+						<a href='http://store.steampowered.com/app/252490/'>&#xf17a;</a>
+						
+					</div>
+					
+										
+					
+				</footer><!-- #colophon -->
+								
+				<div class='afterfooter'>&nbsp;</div>
+			</div> <!-- pagewrapper -->
+		
+	<!-- 37 queries. 0.593 seconds. -->
+		<div style="display:none">
+	</div>
+<script type='text/javascript' src='//playrust.com/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122'></script>
+<script type='text/javascript' src='//s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201610'></script>
+<script type='text/javascript' src='//s.gravatar.com/js/gprofiles.js?ver=2016Maraa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//playrust.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.4.2'></script>
+<script type='text/javascript' src='//playrust.com/wp-content/themes/the-bootstrap/js/bootstrap.min.js?ver=2.0.3'></script>
+<script type='text/javascript' src='//playrust.com/wp-content/themes/the-bootstrap/js/the-bootstrap.min.js?ver=2.0.1'></script>
+<script type='text/javascript' src='//playrust.com/wp-includes/js/wp-embed.min.js?ver=4.4.2'></script>
+<script type='text/javascript' src='//stats.wp.com/e-201610.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.9.1',blog:'61263677',post:'0',tz:'0',srv:'playrust.com'} ]);
+	_stq.push([ 'clickTrackerInit', '61263677', '0' ]);
+</script>
+
+		<script type='text/javascript' src='/rust.js?<? echo rand( 0, 999999 ); ?>'></script>
+
+	</body>
+</html>
+
+<!-- Dynamic page generated in 0.577 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-03-10 13:02:42 -->
+
+<!-- super cache -->
