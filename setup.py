@@ -25,6 +25,7 @@ setup(
         "six",
         "w3lib >= 1.13.0",
         "parsel >= 1.0.1",
+        "tldextract",
     ],
     package_data={
         'autopager': [

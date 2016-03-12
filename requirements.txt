@@ -1,6 +1,7 @@
 lxml
 sklearn-crfsuite >= 0.3.1
 parsel >= 1.0.1
+tldextract
 
 # 0.17 is need for LabelKFold
 scikit-learn >= 0.17

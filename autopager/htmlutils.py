@@ -38,7 +38,7 @@ def get_xseq_yseq(html, selectors, validate=True):
     errors it prints error messages.
     """
     sel = parsel.Selector(html)
-    links = sel.xpath('//a[@href]')
+    links = sel.xpath('.//a[@href]')
     links_extracted = links.extract()
     classes = ["O"] * len(links)
 
@@ -60,3 +60,14 @@ def get_xseq_yseq(html, selectors, validate=True):
             print("Not all links are matched", sel_links - matched_links)
 
     return links, classes
+
+
+def get_link_text(link):
+    """
+    Return text of <a> element: either its string contents or the 'alt'
+    of <img> tags inside.
+    """
+    txt = ' '.join(link.xpath('string()').extract())
+    if not txt:
+        txt = ' '.join(link.xpath('.//img/@alt').extract())
+    return txt
