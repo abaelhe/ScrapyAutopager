@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<link rel="shortcut icon" href="/blog/wp-content/themes/twentyten/images/favicon.png" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Taximobility</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="http://www.taximobility.com/blog/wp-content/themes/twentyten/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/blog/wp-content/themes/twentyten/media_style.css" />
+<link rel="pingback" href="http://www.taximobility.com/blog/xmlrpc.php" />
+<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57955800-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+</head>
+
+<body class="home blog">
+
+<!--Please don't delete this.. This is a default DIV-->
+<!--If deleted this will affect the video lightbox script-->
+<div style="display:none;">	
+<div class="gallery clearfix">
+<a href="http://vimeo.com/54837315?width=800&amp;height=480" rel="prettyPhoto" title="Please don't delete this.. This is a default DIV">
+<img src="../images/video_slider_img.jpg" alt="Please don't delete this.. This is a default DIV " />
+</a>		
+</div>
+<h5>Please don't delete this.. This is a default DIV </h5>					  
+</div>
+
+<script>
+var ww = document.body.clientWidth;
+$(document).ready(function() {
+	$(".hnav li a").each(function() {
+		if ($(this).next().length > 0) {
+			$(this).addClass("parent");
+		}
+	});
+	
+	$(".toggleMenu").click(function(e) {
+		e.preventDefault();
+		$(this).toggleClass("active");
+		$(".hnav").slideToggle("medium");
+	});
+	adjustMenu();
+})
+
+$(window).bind('resize orientationchange', function() {
+	ww = document.body.clientWidth;
+	adjustMenu();
+});
+
+var adjustMenu = function() {
+	if (ww < 901) {	 
+		jQuery(".toggleMenu").css("display", "inline-block");
+		if (!jQuery(".toggleMenu").hasClass("active")) {
+			jQuery(".hnav").css("display", "none");
+		} else {
+			jQuery(".nav").show();
+		}
+		jQuery(".hnav li").unbind('mouseenter mouseleave');
+		jQuery(".hnav li a.parent").unbind('click').bind('click', function(e) {
+			// must be attached to anchor element to prevent bubbling
+			//e.preventDefault();
+			jQuery(this).parent("li").toggleClass("hover");
+		});
+	} 
+	else if (ww >= 901) {
+		jQuery(".toggleMenu").css("display", "none");
+		jQuery(".hnav").css("display", "inline-block");
+		jQuery(".hnav li").removeClass("hover");
+		jQuery(".hnav li a").unbind('click');
+		jQuery(".hnav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+		 	// must be attached to li so that mouseleave is not triggered when hover over submenu
+		 	jQuery(this).toggleClass('hover');
+		});
+	}
+}
+</script>
+	
+   <header>
+	<div class="header_outer">
+		<div class="header_inner">
+			<div class="center clearfix">
+				<a class="logo" href="http://www.taximobility.com/" title="Taximobility"><img src="http://www.taximobility.com/blog/wp-content/themes/twentyten/images/logo.png" alt="Taximobility" /></a>				
+				<div class="header_menu">
+					<a class="toggleMenu" href="javascript:;" style="display:none;"></a>
+					<ul class="hnav" >
+                                          <!--   <li class="hmenu product ">
+                               <a title="PRODUCTS"  href="javascript:;" class="hlink mm_link submenu_arrow parent ">Products</a>
+                                <div class="product_list_nav submenu_sec">
+                                    <ul> 
+                                            <li>
+                                                <a class="submenu_icon submenu_icon1 parent" href="/taxi-service.html" title="Taxi Booking and Dispatching">
+                                                    <img alt="menu" src="/blog/wp-content/themes/twentyten/images/menu_5.png">
+                                                    <span>Taxi Booking and Dispatching</span>
+                                                </a>                                
+                                                <p>Book your taxi from anywhere and track its arrival using GPS with automatic fare calculation</p>                                
+                                            </li>                                         
+                                                                                        <li>
+                                                <a class="submenu_icon submenu_icon1 parent" href="/vehicle-service.html" title="Vehicle Assistance">
+                                                    <img alt="menu" src="/blog/wp-content/themes/twentyten/images/menu_2.png">
+                                                    <span>Vehicle Assistance</span>
+                                                </a>                                
+                                                <p>Avail services from anywhere for towing, jump starts, fuel delivery &amp; oil services, lockouts etc</p>                                
+                                            </li> 
+                                            <li>
+                                                <a class="submenu_icon submenu_icon1 parent" href="/medical-assistance.html" title="Medical Assistance">
+                                                    <img alt="menu" src="/blog/wp-content/themes/twentyten/images/menu_3.png">
+                                                    <span>Medical Assistance</span>
+                                                </a>                                
+                                                <p>Seek a doctor appointment or first aid service, ambulance booking etc promptly via smartphone</p>                                
+                                            </li> 
+                                            <li>
+                                                <a class="submenu_icon submenu_icon1 parent" href="/delivery-service.html" title="Delivery Assistance">
+                                                    <img alt="menu" src="/blog/wp-content/themes/twentyten/images/menu_4.png">
+                                                    <span>Delivery Assistance</span>
+                                                </a>                                
+                                                <p>Feel pampered with ontime delivery service such as courier service at your doorstep using the app</p>                                
+                                            </li> 
+                                    </ul>
+                                </div>
+                            </li> -->
+                            						
+                            						
+						 
+                            <li><a href="http://www.taximobility.com/features.html" title="Features">Features</a></li>                            
+			    <li><a href="http://www.taximobility.com/pricing.html" title="pricing">pricing</a></li> 			    
+                            <li><a href="http://www.taximobility.com/portfolios.html" title="Portfolio">Portfolio</a></li>                             
+                            <li><a href="http://www.taximobility.com/case-studies.html" title="Case Study">Case Study</a></li>                            			                                					                  
+                            <li class="active"><a href="http://www.taximobility.com//blog" title="blog">blog</a></li>
+                            <li><a href="http://www.taximobility.com/contact-us.html" title="Contact us">Contact us</a></li>							
+		            <li class="last_child"><a class="yellow_but" href="http://www.taximobility.com/demo.html" title="View Demo">View Demo</a></li>
+			</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</header>
+
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+	<div id="nav-above" class="navigation">
+		<div class="nav-previous"><a href="http://www.taximobility.com/blog/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+		<div class="nav-next"></div>
+	</div><!-- #nav-above -->
+
+
+
+
+			<div id="post-738" class="post-738 post type-post status-publish format-standard hentry category-infographics">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/which-is-more-cost-effective-for-taxis-petrol-or-diesel/" title="Permanent link to Which is more cost effective for taxis ? Petrol or Diesel">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/which-is-more-cost-effective-for-taxis-petrol-or-diesel/" title="Permalink to Which is more cost effective for taxis ? Petrol or Diesel" rel="bookmark">Which is more cost effective for taxis ? Petrol or Diesel</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/which-is-more-cost-effective-for-taxis-petrol-or-diesel/" title="12:47 pm" rel="bookmark"><span class="entry-date">on March 4, 2016</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p><a href="http://www.taximobility.com/blog/wp-content/uploads/2016/03/petrolvsdiesel.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2016/03/petrolvsdiesel-308x1024.jpg" alt="Taxi infographic" width="308" height="1024" class="aligncenter size-large wp-image-739" /></a></p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>March 4, 2016 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/infographics/" rel="category tag">Infographics</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-733" class="post-733 post type-post status-publish format-standard hentry category-travel">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/why-uber-should-be-regulated-like-taxis/" title="Permanent link to Why Uber Should Be Regulated Like Taxis ?">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/why-uber-should-be-regulated-like-taxis/" title="Permalink to Why Uber Should Be Regulated Like Taxis ?" rel="bookmark">Why Uber Should Be Regulated Like Taxis ?</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/why-uber-should-be-regulated-like-taxis/" title="12:49 pm" rel="bookmark"><span class="entry-date">on February 15, 2016</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p><a href="http://www.taximobility.com/blog/wp-content/uploads/2016/02/3500.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2016/02/3500.jpg" alt="Uber protest" width="620" height="372" class="aligncenter size-full wp-image-734" /></a><br />
+image source &#8211; www.theguardian.com<br />
+&nbsp;<br />
+In Montreal, taxi drivers have started protest against the on demand taxi services uber &#038; lyft earlier this week. Taxi and limousine drivers in Toronto, Montreal &#038; other cities were argued against to uber for depleting their business and also they wants uber should be regulated as like a traditional taxis for continue operating in Canada.<br />
+&nbsp;<br />
+<strong>What is regulation &#038; Why it is needed ?</strong></p>
+<p>Regulation is an act to accomplish social, political, natural and financial results that would some way or another not be carried out inside of an open commercial center. Along these lines, regulations are particularly fundamental when rivalry inside of a business sector can possibly abuse customers and mischief society. In such examples, regulations are expected to advantage shoppers and drive a more beneficial business environment.<br />
+&nbsp;<br />
+Be that as it may, the advanced commercial center considers regulations as hostile to development and against rivalry. It&#8217;s frequently contended that guidelines and regulations are superfluous in light of the fact that market powers can viably direct organizations.<br />
+&nbsp;<br />
+There are few strong reasons, on demand taxi services should be regulated for the below reasons. </p>
+<p>1. To prevent riders from surge pricing<br />
+2. To avoid decreased vehicle quality<br />
+3. To avoid accidents due to less experience cab drivers<br />
+4. To avoid high density traffic due to arrivals of new taxis on the road<br />
+5. To decrease air pollution due to increased taxis.<br />
+6. To drivers become prone due to surge pricing<br />
+7. To avoid operations struggled to fund for business due to increased competition<br />
+&nbsp;<br />
+According to the recent online survey about banning app based taxis, most of the Canadian people have recommended to regulate Uber as like traditional taxis. Banning app based taxi services like Uber is not a right option to solve inflation of taxi fares. Regulating these service is a most excellent and affluent competition.</p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>February 15, 2016 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/travel/" rel="category tag">Travel</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-728" class="post-728 post type-post status-publish format-standard hentry category-taxi-business">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/five-things-to-be-considered-while-buying-a-car-for-taxi/" title="Permanent link to Five Things to be Considered While Buying a Car for Taxis">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/five-things-to-be-considered-while-buying-a-car-for-taxi/" title="Permalink to Five Things to be Considered While Buying a Car for Taxis" rel="bookmark">Five Things to be Considered While Buying a Car for Taxis</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/five-things-to-be-considered-while-buying-a-car-for-taxi/" title="1:19 pm" rel="bookmark"><span class="entry-date">on January 29, 2016</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p><a href="http://www.taximobility.com/blog/wp-content/uploads/2016/01/gallery-2.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2016/01/gallery-2.jpg" alt="Skoda superb" width="900" height="558" class="aligncenter size-full wp-image-729" /></a><br />
+&nbsp;<br />
+If you are being a taxi driver, you would probably consider different aspects which includes fuel consumption, price, boot space, terrain etc. When you are looking to buy a car for taxi business, Skoda is one of the popular make because of its reliability and running cost are important factors that influences cabbies to have a look on it. There are few other things you should bear in mind.<br />
+&nbsp;<br />
+<strong>Aspects to be considered while buying a taxi</strong></p>
+<p><strong>Five Door: </strong><br />
+&nbsp;<br />
+The cars used for taxis should have five doors because passengers needs to get in and out of the car without any difficulty. Cars with high step to the seat is not an ideal option for passengers as well as they don’t want to climb over the seats. </p>
+<p><strong>Space for passengers:</strong><br />
+&nbsp;<br />
+Find a car with sufficient foot space because passengers would like to place their legs comfortably. It will be a horrible journey if they don’t have a space to keep their legs down and they wont choose you again. </p>
+<p><strong>Boot space: </strong><br />
+&nbsp;<br />
+Make sure that the car is having more boot space, because passengers often hail a taxi with luggage, shopping, wheelchairs etc. Especially passengers from airport or railway station will prefer a car which has separate space to keep their luggage. Also you should stow some essential kits like fire extinguisher &#038; first aid kids. </p>
+<p><strong>Fuel efficiency: </strong><br />
+&nbsp;<br />
+Fuel efficient is vital factor while choosing a car for public transportation. You don’t want to fill your fuel tank twice a day. So you must opt for a taxi which delivers high fuel efficiency which helps to reduce the tax cost for emission. </p>
+<p><strong>Less maintenance: </strong><br />
+&nbsp;<br />
+Typically, user cars for taxi business is good choice however, it will not be a reliable a like a new one. Maintenance cost should not erase the savings made on buying the car. Buying an used car in good condition is of a great choice. </p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>January 29, 2016 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-business/" rel="category tag">Taxi Business</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-724" class="post-724 post type-post status-publish format-standard hentry category-taxi-business">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/how-to-acquire-more-customers-to-your-taxi-business/" title="Permanent link to How To Acquire More Customers To Your Taxi Business">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/how-to-acquire-more-customers-to-your-taxi-business/" title="Permalink to How To Acquire More Customers To Your Taxi Business" rel="bookmark">How To Acquire More Customers To Your Taxi Business</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/how-to-acquire-more-customers-to-your-taxi-business/" title="8:02 am" rel="bookmark"><span class="entry-date">on January 18, 2016</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p><a href="http://www.taximobility.com/blog/wp-content/uploads/2016/01/taxiss.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2016/01/taxiss.jpg" alt="taxi users" width="1024" height="576" class="aligncenter size-full wp-image-725" /></a><br />
+source: http://goo.gl/9X5ZZT<br />
+&nbsp;<br />
+Taxi business is becoming one of the competitive industry over the world. Most of the taxi owners seeing their business as an yet another taxi service in their city and they never think about to make their taxi service as a successful one.  Many taxi businesses provides only the same kind of services in circumstances. Taxi owners are probably being unsuccessful in understanding the different customers as well as their various needs. There are few things you would consider for acquiring all type of customers to your business.<br />
+&nbsp;<br />
+<strong>Prosperous customers:</strong></p>
+<p>Affluent customers will never hesitate to hail a luxury taxis. They want great experience, exclusivity, guaranteed trip and better drivers, they can also choose their driver either talkative or not to speak at all. If you doesn&#8217;t provide those, you are failed to acquire a customer like this who don&#8217;t really care about to spend high.<br />
+&nbsp;<br />
+<strong>Business travelers:</strong></p>
+<p>Since they travel more, Business travelers often used to hail a taxi from one point to another. Most of their travel expenses will be paid by their organization, so they don&#8217;t bother about paying more. Only they want you to being punctual for their every business rides.<br />
+&nbsp;<br />
+<strong>Train station passengers:</strong></p>
+<p>This type of passengers will never consider whether the scurfy cars or unhelpful drivers. They want to be on time before boarding.<br />
+&nbsp;<br />
+<strong>Senior citizens :</strong></p>
+<p>Senior citizens will often get off from their home during a day and they might have walk around with canes or walkers / wheelchairs. Aged people would like conscientious drivers who wait for them to getting in/down from the cars and also helping passengers to walk with their canes. When senior citizens hire a taxi don&#8217;t send them a small car, they might have wheelchair which would extremely hard to getting in.<br />
+&nbsp;<br />
+If you are wondering to make your taxi business successful, above group of customers are more precious and loyal to your business.<br />
+&nbsp;<br />
+You could also consider other types of customer who don&#8217;t loyal and pay much for rides. Bar  crowds, patients &#038; students.</p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>January 18, 2016 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-business/" rel="category tag">Taxi Business</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-717" class="post-717 post type-post status-publish format-standard hentry category-taxi-dispatch-2">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/essential-cab-booking-system-for-corporate-employees/" title="Permanent link to Essential Cab Booking System For Corporate Employees">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/essential-cab-booking-system-for-corporate-employees/" title="Permalink to Essential Cab Booking System For Corporate Employees" rel="bookmark">Essential Cab Booking System For Corporate Employees</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/essential-cab-booking-system-for-corporate-employees/" title="12:10 pm" rel="bookmark"><span class="entry-date">on December 16, 2015</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p><a href="http://www.taximobility.com/blog/wp-content/uploads/2015/12/Corporate-Cabs-032.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/12/Corporate-Cabs-032-1024x558.jpg" alt="corporate cab management" width="640" height="348" class="aligncenter size-large wp-image-718" /></a><br />
+img source: www.wellingtonnz.com<br />
+&nbsp;<br />
+Taxi service is becoming an essential transportation mode in many popular cities. Most of the corporate people using taxi cabs for their daily transportation need. There are few crucial problems currently persisting with working people like time delay and security. With the increasing concern about passenger security, the company must be registered as well regulated by local government. The biggest challenge for corporate transport team is to provide seamless security and ensure hassle free travel to their employees.<br />
+&nbsp;<br />
+To address this common issue in day to day life, cab booking software has been exclusively introduced for corporate fleet management, which ensures the safety of employees as well as it overcomes time delay issues. Taximobility provides web based corporate <a href="http://www.taximobility.com" target="_blank">cab dispatch software</a> to book their cabs or cabbies through online from the comfort of their own home or office. This platform also allows the transport team to access and secure all the content as well personal information of their employees.<br />
+&nbsp;<br />
+In corporate &#038; BPO, timely pick up of employee and safe drop is the major concern for their transportation department. Our system allows to monitor employee&#8217;s board in and out time for ensuring safety. Corporate cab management framework is a ready made solution that provides enriched booking and dispatching experience. Also, it provides streamlined cab service for corporate employee through mobile apps. There are lots of advantages of using cab facility management software which simplifies fleet management in the corporate sector.<br />
+&nbsp;<br />
+<strong>Great Asset of Corporate Cab Facility Management System</strong></p>
+<p>1. It provides functionality to make own bookings<br />
+2. Powerful cab management cuts down the waiting time<br />
+3. Reports &#038; history tracking<br />
+4. Admin can manage the user information using their existing system<br />
+5. Receive instant alerts through SMS or e-mail<br />
+6. The admin can see the complete list of trips made by individual cabbie, user travel information and driver information by day / weekly wise<br />
+7. All the activities can be managed through admin dashboard<br />
+8. Can favorite the pick up and drop place on the map</p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>December 16, 2015 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-dispatch-2/" rel="category tag">Taxi Dispatch</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-713" class="post-713 post type-post status-publish format-standard hentry category-taxi-booking-2">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/a-partial-view-about-the-future-of-taxi-booking-apps/" title="Permanent link to A  Partial View About The Future Of Taxi Booking Apps">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/a-partial-view-about-the-future-of-taxi-booking-apps/" title="Permalink to A  Partial View About The Future Of Taxi Booking Apps" rel="bookmark">A  Partial View About The Future Of Taxi Booking Apps</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/a-partial-view-about-the-future-of-taxi-booking-apps/" title="1:33 pm" rel="bookmark"><span class="entry-date">on December 7, 2015</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p><a href="http://www.taximobility.com/blog/wp-content/uploads/2015/12/3078045_20150501001127888141_original_1280x720-1b1lth5.png"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/12/3078045_20150501001127888141_original_1280x720-1b1lth5.png" alt="Taxi Booking App" width="656" height="369" class="aligncenter size-full wp-image-714" /></a></p>
+<p>In past few years, Information technology and smartphones has rapidly grown and it plays vital part in daily life. Different kind of mobile apps changing the way of life in many ways. In this modern life, Taxi booking apps are one among the essential part of our life which allows us to hail local taxis by tapping away. </p>
+<p><strong>Why mobile app based taxis have been so popular</strong></p>
+<p>Mobile app based taxis are the most convenient as well as offering an alternative way for customers to hail local taxi cabs.  Though its not new, there is no necessity for taxi companies to bring taxi drivers on their own books. Most of the taxi companies around the world holding fixed taxi fares regulated by the local government. These taxi apps creates free market and also giving unique choices for passengers. </p>
+<p><strong>Bad press surrounding taxi-hailing apps</strong></p>
+<p>Taxi booking applications have made field days for newsrooms around the globe. There have been dispute by taxi unions, contention about whether laws authorizing their method of operation ought to be passed, security of ride sharing, for example, reports of ambush by drivers, protection scope, security worries about information accumulation and straightforwardness of evaluating frameworks.</p>
+<p><strong>Is the taxi-hailing application business sector is immersed?</strong></p>
+<p>In vast markets like China and the US, for instance, market immersion appears to be just evident in expansive metropolitan ranges. Conversely, suburbia and provincial ranges offer more open doors for littler administrators.</p>
+<p>&#8220;You see KuaiDi Dache and Didi contending furiously in extensive metropolitan ranges in China and it&#8217;s a little window. Be that as it may, outside the city, more neighborhood and social variants of these applications have suitable plans of action, regardless of the fact that the enormous organizations are going for scale and enrolling drivers competitively,&#8221; Light said.</p>
+<p>These taxi booking applications can possibly expand the social availability, accommodation and feeling of being united for groups and this increases the value of society.</p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>December 7, 2015 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-booking-2/" rel="category tag">Taxi Booking</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-705" class="post-705 post type-post status-publish format-standard hentry category-taxi-business">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/rival-taxi-firms-fight-against-uber-in-the-market/" title="Permanent link to Rival Taxi Firm&#8217;s  Fight Against Uber In The Market">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/rival-taxi-firms-fight-against-uber-in-the-market/" title="Permalink to Rival Taxi Firm&#8217;s  Fight Against Uber In The Market" rel="bookmark">Rival Taxi Firm&#8217;s  Fight Against Uber In The Market</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/rival-taxi-firms-fight-against-uber-in-the-market/" title="12:59 pm" rel="bookmark"><span class="entry-date">on October 6, 2015</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p>Uber is an evolving urban transportation service that has deployed its service in more than 60 countries. It has drastically changed the way of hailing domestic taxi which makes people to get addicted in app based taxi bookings. Perhaps Uber is good for some people, it doesn&#8217;t meet enough safety measures and also surge pricing is a huge threat for the people who hails taxis often. Although uber faced lot of protests and regulation issues, The company has running 300+ cities worldwide. However, Uber can&#8217;t defeat rivalry taxi service in many countries.<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/10/0908_uber-bar-chart-co-valuation_1200.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/10/0908_uber-bar-chart-co-valuation_1200-1024x676.jpg" alt="Uber Vs Taxi" width="640" height="422" class="aligncenter size-large wp-image-707" /></a><br />
+Img Source:Pitchbook; Forbes<br />
+&nbsp;<br />
+<b>Why Uber Can&#8217;t Defeat The World ?</b><br />
+&nbsp;<br />
+In India, The giant taxi service Ola cabs merged with Taxiforsure in 2014 and raised $400 M from two biggies SoftBank and Tiger Global. Also Uber cabs should struggle with legacy taxi service of south Asia Grab taxi, which shares two of its investors with Ola cabs and also running cab service over 5 nearby countries.<br />
+&nbsp;<br />
+In China,  people already have adopted with two giant taxi services Didi Dache and Kuaidi Dache. These two taxi firms raised $2 billion by joining together and controlling 99% of taxis market as well 78% of the private car market in China.  Didi Kuaidi&#8217;s CEO Cheng Wei says“The rivalry from Uber is just a tiny wave in our progress,”.<br />
+&nbsp;<br />
+In previous years, Brazil&#8217;s Easy taxi were reinforced the market which was found in 2011. Now Easy taxi is running its service over 30+ counties with 400000 drivers.  This app has an unique feature for passengers to bid up for attracting drivers in rush hour. Wang, The CEO of Easy taxi says, “Uber has dipped its toes, but the market is still for the taking”.<br />
+&nbsp;<br />
+Uber&#8217;s winning strategy got succeeded in US. But other counties can&#8217;t be defeated. </p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>October 6, 2015 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-business/" rel="category tag">Taxi Business</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-693" class="post-693 post type-post status-publish format-standard hentry category-taxi-business">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/are-you-feel-bored-with-your-old-taxi-interior-an-indian-based-art-company-makes-it-stunning-with-cool-colours/" title="Permanent link to Are You Feel Bored With Your Old Taxi Interior, An Indian Based Art Company Makes It Stunning With Cool Colours">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/are-you-feel-bored-with-your-old-taxi-interior-an-indian-based-art-company-makes-it-stunning-with-cool-colours/" title="Permalink to Are You Feel Bored With Your Old Taxi Interior, An Indian Based Art Company Makes It Stunning With Cool Colours" rel="bookmark">Are You Feel Bored With Your Old Taxi Interior, An Indian Based Art Company Makes It Stunning With Cool Colours</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/are-you-feel-bored-with-your-old-taxi-interior-an-indian-based-art-company-makes-it-stunning-with-cool-colours/" title="10:48 am" rel="bookmark"><span class="entry-date">on August 22, 2015</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<p>If you are getting into the local taxicab, there is nothing much better to look inside the taxi expect out of the window.  An Indian based start-up company called Taxi fabric that asks Mumbai designers to create fabric designs for the interior of taxicabs. Sanket Avlani is a professional graphic designer and the founder of  Taxi fabric who runs the project with the help of project manager Mahak Malik and writers Nathalie Gordon and Girish Narayandass.  Avlani says, fabric designs for taxi interior is aimed to deliver design as a profession in a culture that often takes an impact of art.<br />
+&nbsp;<br />
+Mumbai is the most populous city in India which has more than 20 million people with 50,000 taxicabs, where taxi is the most convenient mode of  transportation for Mumbaians. In Mumbai, taxis are regulated by the Government and taxi unions however, a number of taxis are rented by individuals. Everyday cabbies are trying to stand out from the competition, which usually turns them to decorate their car&#8217;s interior with rosary and trinkets. Alvani says, beautifying the cab&#8217;s interiors with bold, colorful patterns not only adds character, it will also make the taxi recognizable to the customers.<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-facric.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-facric.jpg" alt="taxi fabric" width="1000" height="667" class="aligncenter size-full wp-image-694" /></a><br />
+India and Pakistan separated at birth, siblings who grew up and forgot how much they love each other<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric1.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric1.jpg" alt="Taxi fabric" width="1000" height="667" class="aligncenter size-full wp-image-695" /></a><br />
+A hundred year old generation of 20 somethings that saw the same dream. A free India<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric2.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric2.jpg" alt="taxi fabric" width="1000" height="667" class="aligncenter size-full wp-image-696" /></a><br />
+Busy people living busy lives in a busy city<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric3.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric3.jpg" alt="taxi fabric" width="1000" height="667" class="aligncenter size-full wp-image-697" /></a><br />
+Inspired from a fashionable, retro, local, intricate, organic, bold but a unique nature of the city<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric4.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric4.jpg" alt="taxi fabric" width="1000" height="667" class="aligncenter size-full wp-image-698" /></a><br />
+Little-little stories in a big concrete-concrete jungle<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric5.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric5.jpg" alt="taxi fabric" width="1000" height="667" class="aligncenter size-full wp-image-699" /></a><br />
+Color Color Which Color Do you want?<br />
+&nbsp;<br />
+<a href="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric6.jpg"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/08/taxi-fabric6.jpg" alt="taxi fabric" width="1000" height="667" class="aligncenter size-full wp-image-700" /></a><br />
+Twenty cups of tea and twenty million pigeons for the road<br />
+&nbsp;<br />
+Source: http://www.taxifabric.org/</p>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>August 22, 2015 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-business/" rel="category tag">Taxi Business</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-545" class="post-545 post type-post status-publish format-standard hentry category-taxi-booking-2">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/4-causes-why-cabbies-doesnt-land-up-on-time/" title="Permanent link to #4 Causes Why Cabbies Doesn&#8217;t Land Up on Time">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/4-causes-why-cabbies-doesnt-land-up-on-time/" title="Permalink to #4 Causes Why Cabbies Doesn&#8217;t Land Up on Time" rel="bookmark">#4 Causes Why Cabbies Doesn&#8217;t Land Up on Time</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/4-causes-why-cabbies-doesnt-land-up-on-time/" title="6:15 am" rel="bookmark"><span class="entry-date">on July 27, 2015</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<div class="left_post"><a href="http://www.taximobility.com/blog/wp-content/uploads/2015/07/taxitaxi.png"><img class="aligncenter size-full wp-image-548" src="http://www.taximobility.com/blog/wp-content/uploads/2015/07/taxitaxi.png" alt="Taxis" width="875" height="455" /></a></div>
+<p>&nbsp;</p>
+<div class="right_post">There are lot of reasons everyday, for people missing out their flights and not getting into their work on time. Cab delay is the most common problem and in many instances people are experiencing this trouble daily. Am sharing you some prevalent causes why cabbies doesn&#8217;t land up on time. <a href="http://www.taximobility.com/blog/4-causes-why-cabbies-doesnt-land-up-on-time/#more-545" class="more-link">Read More  <span class="meta-nav">&rarr;</span></a></div>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>July 27, 2015 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-booking-2/" rel="category tag">Taxi Booking</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+
+			<div id="post-533" class="post-533 post type-post status-publish format-standard hentry category-taxi-business">
+		
+		<!--div class="post_left">
+			<a href="http://www.taximobility.com/blog/if-you-cant-compete-with-uber-then-create-an-own-taxi-app/" title="Permanent link to If You Can&#8217;t Compete With Uber, Create Your Own Taxi App">
+				<img src="wp-content/themes/twentyten/images/blog_img1.png" alt="post_img" />
+			</a>
+		</div-->
+		
+		<div class="post_right">
+			<h2 class="entry-title"><a href="http://www.taximobility.com/blog/if-you-cant-compete-with-uber-then-create-an-own-taxi-app/" title="Permalink to If You Can&#8217;t Compete With Uber, Create Your Own Taxi App" rel="bookmark">If You Can&#8217;t Compete With Uber, Create Your Own Taxi App</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author posted_txt">Posted</span> <a href="http://www.taximobility.com/blog/if-you-cant-compete-with-uber-then-create-an-own-taxi-app/" title="8:06 am" rel="bookmark"><span class="entry-date">on July 9, 2015</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.taximobility.com/blog/author/admin/" title="View all posts by Arun Kumar">Arun Kumar</a></span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+
+				<div class="left_post"><a href="http://www.taximobility.com/blog/wp-content/uploads/2015/07/IC717248.png"><img src="http://www.taximobility.com/blog/wp-content/uploads/2015/07/IC717248.png" alt="app like uber" width="580" height="310" class="aligncenter size-full wp-image-534" /></a></div>
+<div class="right_post">
+In the early years, taxi cabs was invented to have a comfortable ride for working class people and they were using horse and buggy to transit individuals. Less than a decade, Uber &#038; Lyft have made a big revolution in the taxi marketplace as well as the approach of traditional taxi hailing. <a href="http://www.taximobility.com/blog/if-you-cant-compete-with-uber-then-create-an-own-taxi-app/#more-533" class="more-link">Read More  <span class="meta-nav">&rarr;</span></a></div>
+				                            
+			</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+			
+			<div class="block-readmore">                
+                <ul>
+					<li>July 9, 2015 | </li>
+                	<li>no responses.</li>                
+					<!--<li><a href="#" title="Read More"> Read More </a> </li>  -->             
+                </ul>
+             </div>
+			
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="http://www.taximobility.com/blog/category/taxi-business/" rel="category tag">Taxi Business</a>					</span>
+					<!-- span class="meta-sep">|</span> !-->
+												<span class="comments-link"><span>Comments Off</span></span>
+							</div><!-- .entry-utility -->
+		
+		
+		</div>
+		
+		</div><!-- #post-## -->
+
+		
+	
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://www.taximobility.com/blog/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+					<div class="nav-next"></div>
+				</div><!-- #nav-below -->
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><!--form action="" id="searchform" method="get" role="search">
+	<table cellpadding="5" cellspacing="5" border="0" class="search_table fl">
+	        <tbody>
+	        <tr>
+	                <td><input type="text" class="search_text" id="s" name="s" value=""></td>
+	                <td><input type="submit" value="" class="searchsubmit" id="searchsubmit"></td>
+	        </tr>
+	        <tr>
+	                <td colspan="2"><span class="quite mt-5 fl">Enter the search key. Ex: social media</span></td>
+	        </tr>
+	        </tbody>
+	</table>
+</form-->
+
+
+
+<div class="blog_search">
+
+						<form action="" id="searchform" method="get" role="search">
+						<div class="search_tbox" >
+						<input type="text" id="s" name="s" value="Search Blog" onBlur="if(this.value == '') { this.value='Search Blog'}" onFocus="if (this.value == 'Search Blog') {this.value=''}"/>
+
+						</div>
+						<div class="search_button">
+						<input type="submit" value="" title="Search" id="searchsubmit" />
+						</div>
+						</form>
+
+</div>
+</li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://www.taximobility.com/blog/which-is-more-cost-effective-for-taxis-petrol-or-diesel/">Which is more cost effective for taxis ? Petrol or Diesel</a>
+						</li>
+					<li>
+				<a href="http://www.taximobility.com/blog/why-uber-should-be-regulated-like-taxis/">Why Uber Should Be Regulated Like Taxis ?</a>
+						</li>
+					<li>
+				<a href="http://www.taximobility.com/blog/five-things-to-be-considered-while-buying-a-car-for-taxi/">Five Things to be Considered While Buying a Car for Taxis</a>
+						</li>
+					<li>
+				<a href="http://www.taximobility.com/blog/how-to-acquire-more-customers-to-your-taxi-business/">How To Acquire More Customers To Your Taxi Business</a>
+						</li>
+					<li>
+				<a href="http://www.taximobility.com/blog/essential-cab-booking-system-for-corporate-employees/">Essential Cab Booking System For Corporate Employees</a>
+						</li>
+				</ul>
+		</li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+	<li><a href='http://www.taximobility.com/blog/2016/03/'>March 2016</a></li>
+	<li><a href='http://www.taximobility.com/blog/2016/02/'>February 2016</a></li>
+	<li><a href='http://www.taximobility.com/blog/2016/01/'>January 2016</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/12/'>December 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/10/'>October 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/08/'>August 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/07/'>July 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/06/'>June 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/05/'>May 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/04/'>April 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/03/'>March 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/02/'>February 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2015/01/'>January 2015</a></li>
+	<li><a href='http://www.taximobility.com/blog/2014/12/'>December 2014</a></li>
+		</ul>
+</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-19"><a href="http://www.taximobility.com/blog/category/courier-app/" >Courier App</a>
+</li>
+	<li class="cat-item cat-item-45"><a href="http://www.taximobility.com/blog/category/delivery-app/" >Delivery app</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="http://www.taximobility.com/blog/category/home-assistance/" >Home Assistance</a>
+</li>
+	<li class="cat-item cat-item-44"><a href="http://www.taximobility.com/blog/category/infographics/" >Infographics</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="http://www.taximobility.com/blog/category/medical-assistance/" >Medical Assistance</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://www.taximobility.com/blog/category/rodeside-assistance/" >rodeside assistance</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.taximobility.com/blog/category/taxi-booking-2/" >Taxi Booking</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="http://www.taximobility.com/blog/category/taxi-business/" >Taxi Business</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://www.taximobility.com/blog/category/taxi-dispatch-2/" >Taxi Dispatch</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.taximobility.com/blog/category/taxi-hailing/" >Taxi Hailing</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="http://www.taximobility.com/blog/category/travel/" >Travel</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.taximobility.com/blog/category/uncategorized/" >Uncategorized</a>
+</li>
+		</ul>
+</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+        		
+  <footer>
+  
+<div class="footer_outer">
+    <div class="become_a_partner">
+        <a href="javascript:;" data-toggle="tooltip" data-placement="top" title="Become a Partner">
+            <span class="partner_icon">&nbsp;</span>
+            <span class="partner_outer">
+                <span>Become a</span>
+                <span class="partner">Partner</span>
+            </span>
+        </a>
+    </div>
+        <div class="footer_outer_inner">
+        <div class="footer clearfix">
+            <div class="clearfix">   
+					<div class="footer_products footer_products1 equal_height">
+                        <h6>Learn More</h6>
+                        <ul>						  
+							<li><a href="/about-us.html" title="About Us">About Us</a></li>
+							<li><a href="/termsconditions.html" rel="nofollow" title="Terms & Conditions">Terms & Conditions</a></li> 
+							<li><a href="/privacypolicy.html" rel="nofollow" title="Privacy & Policy">Privacy & Policy</a></li>
+							<li><a href="/tutorial.html" title="Tutorial">Tutorial</a></li>			    
+							<li><a href="/blog" title="Blog" >Blog</a></li>
+                        </ul>
+                    </div>
+                
+                    <div class="footer_products equal_height">
+                        <h6>Company</h6>
+                        <ul> 
+                           <li><a href="/features.html" title="Features">Features</a></li>  
+                           <li><a href="/portfolios.html" title="Portfolio">Portfolio</a></li> 
+                           <li><a href="/faq.html" title="FAQ">FAQ</a></li>  			   
+						   <li><a href="/downloads.html?filename=Corporate_Document.pdf" title="Corporate Document">Corporate Document</a></li>                                              
+                        </ul>
+                    </div>
+					<div class="footer_products footer_service equal_height">                       
+						<h6 class="footer_title">Solution</h6>
+						<ul class="footer_menu">
+							<li><a href="/taxi-booking-and-dispatching.html" title="Taxi Booking and Dispatching">Taxi Booking and Dispatching</a></li>     
+							<!--<li><a href="/home-assistance.html" title="Home Assistance">Home Assistance</a></li>-->                                 
+							<li><a href="/vehicle-assistance.html" title="Vehicle Assistance">Vehicle Assistance</a></li>                                
+							<!-- <li><a href="/medical-assistance.html" title="Medical Assistance">Medical Assistance</a></li> !-->                                
+							<li><a href="/delivery-assistance.html" title="Delivery Assistance">Delivery Assistance</a></li>                                                                                   
+						</ul>                       
+					</div>
+                   <div class="footer_products footer_products_contact equal_height">
+                        <h6>Contact Us</h6>                        
+                        <p>NDOT Inc,</p>
+                        <p>440 N Wolfe Rd,</p>
+                        <p>Sunnyvale,</p>
+                        <p>CA 94085.</p>
+                        <p>Phone: +1 (202) 657 -6901</p>                        
+                    </div>
+                    <div class="footer_products footer_rgt equal_height">
+                        <h6>Social</h6>
+						<ul>				
+							<li><a class="facebook2 " href="https://www.facebook.com/taximobilityapp" title="Facebook" target="_blank"></a></li>
+							<li><a class="twitter" href="https://twitter.com/taximobilityapp" title="Twitter" target="_blank"></a></li>                                
+							<li><a class="google" href="https://plus.google.com/u/0/b/108768340599542283333/108768340599542283333" title="Google+" target="_blank"></a></li> 
+							<li><a class="linked_in" href="https://www.linkedin.com/company/taximobility" title="LinkedIn" target="_blank"></a></li>
+						</ul>
+						<div class="nasscom">&nbsp;</div>
+						<div class="become_a_partner">
+							<a href="javascript:;" data-toggle="tooltip" data-placement="top" title="Become a Partner">
+								<span class="partner_icon">&nbsp;</span>
+								<span class="partner_outer">
+									<span>Become a</span>
+									<span class="partner">Partner</span>
+								</span>
+							</a>
+						</div>
+                        </div>       
+        </div> 
+        </div>
+    </div>
+</div>
+<div class="copy_r_outer">
+    <div class="copy_r_outer_inner">
+        <div class="copy_r_outer_rgt">
+            <p class="copy_r">&copy;2015 Taximobility. All rights reserved.</p>
+            <div class="skype_add"><a href="skype:contact.taximobility?call" target="_blank" title="contact.taximobility">contact.taximobility</a></div>
+        </div>
+    </div>
+</div>           
+		</footer>
+        <!-- end of Footer --> 
+
+ <script type="text/javascript">
+        var __lc = {};
+        __lc.license = 5324991;
+
+        (function() {
+        var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+        lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+        })();
+    </script>
+ 
+</body>
+</html>
