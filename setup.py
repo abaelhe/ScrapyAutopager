@@ -26,19 +26,25 @@ setup(
         "w3lib >= 1.13.0",
         "parsel >= 1.0.1",
         "tldextract",
+        "docopt",
+        'sklearn-crfsuite >= 0.3.3',
     ],
     package_data={
         'autopager': [
-            'data/*.json',
-            'data/html/*.html'
+            'autopager.crf',
+            # 'data/*.csv',
+            # 'data/html/*.html'
         ],
     },
-    extras_require={
-        'with-deps': [
-            'scikit-learn >= 0.17',
-            'scipy',
-            'sklearn-crfsuite >= 0.3.1',
-        ],
+    # extras_require={
+    #     'with-deps': [
+    #         # 'scikit-learn >= 0.17',
+    #         # 'scipy',
+    #         'sklearn-crfsuite >= 0.3.1',
+    #     ],
+    # },
+    entry_points={
+        'console_scripts': ['autopager = autopager.__main__:main']
     },
     classifiers=[
         'Development Status :: 3 - Alpha',
