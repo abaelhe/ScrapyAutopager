@@ -27,7 +27,8 @@ setup(
         "parsel >= 1.0.1",
         "tldextract",
         "docopt",
-        'sklearn-crfsuite >= 0.3.3',
+        "sklearn-crfsuite >= 0.3.3",
+        "backports.csv",
     ],
     package_data={
         'autopager': [

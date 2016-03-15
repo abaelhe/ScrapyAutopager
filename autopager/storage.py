@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 import os
-import csv
-import codecs
-import six
+import io
 
+from backports import csv
 import parsel
 
 from autopager.htmlutils import get_xseq_yseq
@@ -41,11 +40,7 @@ class Storage(object):
 
     def iter_records(self):
         info_path = os.path.join(self.path, 'data.csv')
-        if six.PY2:
-            fp = open(info_path, 'rb')
-        else:
-            fp = open(info_path, 'r', encoding='utf8')
-        with fp as f:
+        with io.open(info_path, encoding='utf8') as f:
             for row in csv.DictReader(f):
                 if row['failed']:
                     continue
@@ -54,5 +49,5 @@ class Storage(object):
     def _load_html(self, row):
         data_path = os.path.join(self.path, 'html')
         path = os.path.join(data_path, row['File Name'] + ".html")
-        with codecs.open(path, encoding=row['Encoding']) as f:
+        with io.open(path, encoding=row['Encoding']) as f:
             return f.read()

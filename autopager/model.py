@@ -56,7 +56,7 @@ def link_to_features(link):
     query_parsed = parse_qsl(p.query)
     query_param_names = [k.lower() for k, v in query_parsed]
     query_param_names_ngrams = ngrams_wb(
-        " ".join([normalize(p) for p in query_param_names]), 3, 5, True
+        " ".join([normalize(name) for name in query_param_names]), 3, 5, True
     )
 
     elem = link.root
