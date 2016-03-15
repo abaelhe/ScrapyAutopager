@@ -19,23 +19,78 @@ Autopager is a Python package which detects and classifies pagination links.
 
 License is MIT.
 
+Installation
+============
+
+Install autopager with pip::
+
+   pip install autopager
+
+Autopager depends on a few other packages like lxml_ and python-crfsuite_;
+it will try install them automatically, but you may need to consult
+with installation docs for these packages if installation fails.
+
+.. _lxml: http://lxml.de/
+.. _python-crfsuite: http://python-crfsuite.readthedocs.org/en/latest/
+
+Autopager works in Python 2.7+ and 3.3+.
+
+Usage
+=====
+
+``autopager.urls`` function returns a list of pagination URLs::
+
+   >>> import autopager
+   >>> import requests
+   >>> autopager.urls(requests.get('http://my-url.org'))
+   ['http://my-url.org/page/1', 'http://my-url.org/page/3', 'http://my-url.org/page/4']
+
+``autopager.select`` function returns all pagination ``<a>`` elements
+as ``parsel.SelectorList`` (the same object as scrapy
+response.css / response.xpath methods return).
+
+``autopager.extract`` function returns a list of (link_type, link) tuples
+where link_type is one of "PAGE", "PREV", "NEXT" and link
+is a ``parsel.Selector`` instance.
+
+These functions accept HTML page contents (as an unicode string),
+requests.response or scrapy.Response as a first argument.
+
+By default, a prebuilt extraction model is used. If you want to use
+your own model use ``autopager.AutoPager`` class; it has the same
+methods but allows to provide model path or model itself::
+
+   >>> import autopager
+   >>> pager = autopager.AutoPager('my_model.crf')
+   >>> pager.urls(html)
+
+You also have to use AutoPager class if you've cloned repository from git;
+prebuilt model is only available in pypi releases.
+
+Contributing
+============
+
+* Source code: https://github.com/TeamHG-Memex/autopager
+* Issue tracker: https://github.com/TeamHG-Memex/autopager/issues
+
 How It Works
 ============
 
 Autopager uses machine learning to detect paginators. It classifies
-``<a>`` HTML elements into 5 classes:
+``<a>`` HTML elements into 4 classes:
 
 * PREV - previous page link
 * PAGE - a link to a specific page
 * NEXT - next page link
-* LAST - 'got to last page' link which is not just a number
-* FIRST - 'got to first page' link which is not just '1' number
 * OTHER - not a pagination link
 
-To do that it uses features like link text, URL parts and right/left contexts.
-CRF is used for learning.
+To do that it uses features like link text, css class names,
+URL parts and right/left contexts. CRF_ model is used for learning.
 
-Web page is represented as a sequence of ``<a>`` elements.
+Web page is represented as a sequence of ``<a>`` elements. Only ``<a>``
+elements with non-empty href attributes are in this sequence.
+
+.. _CRF: https://en.wikipedia.org/wiki/Conditional_random_field
 
 Training Data
 =============
@@ -43,6 +98,19 @@ Training Data
 Data is stored at autopager/data. Raw HTML source code
 is in autopager/data/html folder. Annotations are in autopager/data/data.csv
 file; elements are stored as CSS selectors.
+
+Training data is annotated with 5 non-empty classes:
+
+* PREV - previous page link
+* PAGE - a link to a specific page
+* NEXT - next page link
+* LAST - 'got to last page' link which is not just a number
+* FIRST - 'got to first page' link which is not just '1' number
+
+Because LAST and FIRST are relatively rare they are converted to PAGE
+by pagination model. By using these classes during annotation it can be
+possible to make model predict them as well in future, with more training
+examples.
 
 To add a new page to training data save it to an html file
 and add a row to the data.csv file. It is helpful
@@ -53,6 +121,10 @@ Don't worry if your CSS selectors don't return ``<a>`` elements directly
 when using SelectorGadget). If a selection itself is not ``<a>`` element
 then parent ``<a>`` elements and children ``<a>`` elements are tried, this is
 usually what is wanted because ``<a>`` tags are not nested on valid websites.
+
+When using SelectorGadget pay special attention not to select anything other
+than pagination elements. Always check element count displayed by
+SelectorGadget and compare it to a number of elements you wanted to select.
 
 Some websites change their DOM after rendering. This rarely affect paginator
 elements, but sometimes it can happen. To prevent it instead of downloading
