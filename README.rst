@@ -54,7 +54,7 @@ where link_type is one of "PAGE", "PREV", "NEXT" and link
 is a ``parsel.Selector`` instance.
 
 These functions accept HTML page contents (as an unicode string),
-requests.response or scrapy.Response as a first argument.
+requests Response or scrapy Response as a first argument.
 
 By default, a prebuilt extraction model is used. If you want to use
 your own model use ``autopager.AutoPager`` class; it has the same
@@ -66,6 +66,7 @@ methods but allows to provide model path or model itself::
 
 You also have to use AutoPager class if you've cloned repository from git;
 prebuilt model is only available in pypi releases.
+
 
 Contributing
 ============
