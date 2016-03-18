@@ -1,7 +1,12 @@
 lxml
-sklearn-crfsuite >= 0.3.1
+sklearn-crfsuite >= 0.3.3
 parsel >= 1.0.1
 tldextract
+backports.csv
 
-# 0.17 is need for LabelKFold
+# 0.17 is need for LabelKFold; scikit-learn is required only
+# for evaluation, not for usage
 scikit-learn >= 0.17
+
+# docopt is required only for CLI
+docopt
