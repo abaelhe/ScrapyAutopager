@@ -141,7 +141,7 @@ def page_to_features(xseq):
 def get_crf(**kwargs):
     params = dict(
         algorithm='lbfgs',
-        c1=0.002,
+        c1=0.001,
         c2=0.05,
         max_iterations=100,
         all_possible_transitions=True,
