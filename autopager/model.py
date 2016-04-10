@@ -30,6 +30,7 @@ from autopager.htmlutils import (
     get_link_text,
     get_link_href,
     get_text_around_selector_list,
+    get_selector_root,
 )
 from autopager.utils import normalize, tokenize, ngrams_wb, replace_digits
 
@@ -59,7 +60,7 @@ def link_to_features(link):
         " ".join([normalize(name) for name in query_param_names]), 3, 5, True
     )
 
-    elem = link.root
+    elem = get_selector_root(link)
     elem_target = _elem_attr(elem, 'target')
     elem_rel = _elem_attr(elem, 'rel')
 

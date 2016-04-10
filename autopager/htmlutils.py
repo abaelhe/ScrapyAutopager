@@ -89,10 +89,19 @@ def get_text_around_selector_list(sel_list, max_length=150):
     """
     if not sel_list:
         return []
-    root = list(sel_list[0].root.iterancestors())[-1]
-    elems = [sel.root for sel in sel_list]
-    before, after = get_text_around_elems(root, elems)
+    doc_root = list(get_selector_root(sel_list[0]).iterancestors())[-1]
+    elems = [get_selector_root(sel) for sel in sel_list]
+    before, after = get_text_around_elems(doc_root, elems)
     return [(before[el][-max_length:], after[el][:max_length]) for el in elems]
+
+
+def get_selector_root(sel):
+    """ Return lxml Element for a Selector """
+    if not hasattr(sel, 'root'):
+        # scrapy.Selector, scrapy < 1.1
+        return sel._root
+    # parsel.Selector or scrapy.Selector, scrapy >= 1.1
+    return sel.root
 
 
 # XXX: this function is copied from formasaurus.
