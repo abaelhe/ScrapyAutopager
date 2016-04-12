@@ -127,15 +127,15 @@ def link_to_features(link):
 
 def page_to_features(xseq):
     features = [link_to_features(a) for a in xseq]
-
     around = get_text_around_selector_list(xseq, max_length=15)
-    for feat, (before, after) in zip(features, around):
-        # weight is less than 1 because there is a lot of duplicate information
-        # in these ngrams and so we want to regularize them stronger
-        # (as if they are a single feature, not many features)
-        feat['text-before'] = {n: 0.2 for n in ngrams_wb(before, 5, 5)}
-        feat['text-after'] = {n: 0.2 for n in ngrams_wb(after, 5, 5)}
 
+    # weight is less than 1 because there is a lot of duplicate information
+    # in these ngrams and so we want to regularize them stronger
+    # (as if they are a single feature, not many features)
+    k = 0.2
+    for feat, (before, after) in zip(features, around):
+        feat['text-before'] = {n: k for n in ngrams_wb(normalize(before), 5, 5)}
+        feat['text-after'] = {n: k for n in ngrams_wb(normalize(after), 5, 5)}
     return features
 
 
