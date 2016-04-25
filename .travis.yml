@@ -11,15 +11,6 @@ env:
     - TOXENV=py33
     - TOXENV=py35
 
-addons:
-    apt:
-        packages:
-            - python-numpy
-            - python-scipy
-            - libatlas-base-dev
-            - liblapack-dev
-            - gfortran
-
 install:
     - pip install -U pip tox codecov
 
