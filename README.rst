@@ -67,6 +67,16 @@ methods but allows to provide model path or model itself::
 You also have to use AutoPager class if you've cloned repository from git;
 prebuilt model is only available in pypi releases.
 
+Detection Quality
+=================
+
+Web pages can be very different; autopager tries to work for all websites,
+but some errors are inevitable. As a very rough estimate, expect it to work
+properly for **9/10** paginators on websites sampled from 1M international
+most popular websites (according to `Alexa Top`_).
+
+.. _Alexa Top: https://support.alexa.com/hc/en-us/articles/200449834-Does-Alexa-have-a-list-of-its-top-ranked-websites-
+
 Contributing
 ============
 
@@ -90,19 +100,9 @@ URL parts and right/left contexts. CRF_ model is used for learning.
 Web page is represented as a sequence of ``<a>`` elements. Only ``<a>``
 elements with non-empty href attributes are in this sequence.
 
-.. _CRF: https://en.wikipedia.org/wiki/Conditional_random_field
-
-Detection Quality
-=================
-
-Web pages can be very different; autopager tries to work for all websites,
-but some errors are inevitable. As a very rough estimate, expect it to work
-properly for **9/10** paginators on websites sampled from 1M international
-most popular websites (according to `Alexa Top`_).
-
 See also: https://github.com/TeamHG-Memex/autopager/blob/master/notebooks/Training.ipynb
 
-.. _Alexa Top: https://support.alexa.com/hc/en-us/articles/200449834-Does-Alexa-have-a-list-of-its-top-ranked-websites-
+.. _CRF: https://en.wikipedia.org/wiki/Conditional_random_field
 
 Training Data
 =============
